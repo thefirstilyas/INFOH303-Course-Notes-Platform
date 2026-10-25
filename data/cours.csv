@@ -1,0 +1,48 @@
+code_cours,nom,faculte,credits
+INFOH100,Introduction à la programmation,Informatique,5
+INFOH101,Algorithmique,Informatique,5
+INFOH102,Structures de données,Informatique,5
+INFOH200,Programmation orientée objet,Informatique,5
+INFOH201,Programmation avancée,Informatique,5
+INFOH202,Développement web,Informatique,5
+INFOH203,Bases de données avancées,Informatique,5
+INFOH300,Systèmes d’exploitation,Informatique,5
+INFOH301,Réseaux informatiques,Informatique,5
+INFOH302,Sécurité informatique,Informatique,5
+INFOH303,Bases de données,Informatique,5
+INFOH304,Génie logiciel,Informatique,5
+INFOH305,Architecture des ordinateurs,Informatique,5
+INFOH306,Compilation,Informatique,5
+INFOH307,Programmation concurrente,Informatique,5
+INFOH308,Cloud computing,Informatique,5
+INFOH309,Big Data,Informatique,5
+INFOH310,Machine learning,Informatique,5
+INFOH311,Intelligence artificielle,Informatique,5
+INFOH312,Vision par ordinateur,Informatique,5
+MATH100,Mathématiques discrètes,Mathématiques,5
+MATH101,Analyse 1,Mathématiques,5
+MATH102,Analyse 2,Mathématiques,5
+MATH200,Algèbre linéaire,Mathématiques,5
+MATH201,Probabilités,Mathématiques,5
+MATH202,Statistiques,Mathématiques,5
+MATH203,Optimisation,Mathématiques,5
+MATH204,Processus stochastiques,Mathématiques,5
+PHYS100,Physique générale,Sciences,5
+PHYS101,Mécanique,Sciences,5
+PHYS102,Électricité et magnétisme,Sciences,5
+PHYS200,Thermodynamique,Sciences,5
+PHYS201,Optique,Sciences,5
+ECON100,Introduction à l’économie,Économie,5
+ECON101,Microéconomie,Économie,5
+ECON102,Macroéconomie,Économie,5
+ECON200,Économie internationale,Économie,5
+ECON201,Économétrie,Économie,5
+LANG100,Anglais académique,Langues,3
+LANG101,Communication écrite,Langues,3
+LANG102,Communication orale,Langues,3
+LANG200,Anglais avancé,Langues,3
+LANG201,Rédaction scientifique,Langues,3
+MGMT100,Introduction au management,Gestion,5
+MGMT200,Gestion de projet,Gestion,5
+MGMT201,Entrepreneuriat,Gestion,5
+MGMT202,Management stratégique,Gestion,5

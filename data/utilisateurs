@@ -1,0 +1,1820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<utilisateurs>
+
+    <utilisateur id="1">
+        <nomUtilisateur>alice_dupont</nomUtilisateur>
+        <email>alice.dupont@univ.be</email>
+        <dateInscription>2025-09-15</dateInscription>
+        <points>1250</points>
+        <niveau>5</niveau>
+        <titreActif>Top Contributeur</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH303</cours>
+                <titre>Introduction aux bases de données</titre>
+                <datePublication>2025-10-01</datePublication>
+                <noteMoyenne>4.5</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>MATH201</cours>
+                <titre>Résumé probabilités</titre>
+                <datePublication>2025-10-10</datePublication>
+                <noteMoyenne>4.2</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Top Contributeur</objet>
+            <objet>Cadre premium</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Très clair !</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bon résumé</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="2">
+        <nomUtilisateur>benoit_martin</nomUtilisateur>
+        <email>benoit.martin@univ.be</email>
+        <dateInscription>2025-09-17</dateInscription>
+        <points>870</points>
+        <niveau>4</niveau>
+        <titreActif>Titre étudiant modèle</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH310</cours>
+                <titre>Fondamentaux du machine learning</titre>
+                <datePublication>2025-10-05</datePublication>
+                <noteMoyenne>4.0</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH311</cours>
+                <titre>Introduction à l'IA</titre>
+                <datePublication>2025-10-20</datePublication>
+                <noteMoyenne>4.3</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Badge IA</objet>
+            <objet>Titre étudiant modèle</objet>
+            <objet>Thème sombre</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bien structuré</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très utile pour la révision</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="3">
+        <nomUtilisateur>camille_leroy</nomUtilisateur>
+        <email>camille.leroy@univ.be</email>
+        <dateInscription>2025-09-18</dateInscription>
+        <points>2100</points>
+        <niveau>7</niveau>
+        <titreActif>Maître du savoir</titreActif>
+        <resumes>
+            <resume>
+                <cours>MATH100</cours>
+                <titre>Mathématiques discrètes - résumé complet</titre>
+                <datePublication>2025-09-25</datePublication>
+                <noteMoyenne>4.8</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>MATH200</cours>
+                <titre>Algèbre linéaire synthèse</titre>
+                <datePublication>2025-10-03</datePublication>
+                <noteMoyenne>4.6</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>MATH203</cours>
+                <titre>Optimisation - méthodes principales</titre>
+                <datePublication>2025-10-15</datePublication>
+                <noteMoyenne>4.7</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Maître du savoir</objet>
+            <objet>Badge math</objet>
+            <objet>Cadre doré</objet>
+            <objet>Effet brillant</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Exceptionnel, merci !</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Le meilleur résumé du cours</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très complet</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="4">
+        <nomUtilisateur>david_nguyen</nomUtilisateur>
+        <email>david.nguyen@univ.be</email>
+        <dateInscription>2025-09-20</dateInscription>
+        <points>430</points>
+        <niveau>2</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH100</cours>
+                <titre>Bases de la programmation</titre>
+                <datePublication>2025-10-08</datePublication>
+                <noteMoyenne>3.5</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur actif</objet>
+            <objet>Icône étoile</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Correct mais peut être amélioré</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Assez utile</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="5">
+        <nomUtilisateur>emma_bernard</nomUtilisateur>
+        <email>emma.bernard@univ.be</email>
+        <dateInscription>2025-09-22</dateInscription>
+        <points>3200</points>
+        <niveau>9</niveau>
+        <titreActif>Légende du campus</titreActif>
+        <resumes>
+            <resume>
+                <cours>ECON100</cours>
+                <titre>Introduction à l'économie - fiche synthèse</titre>
+                <datePublication>2025-09-28</datePublication>
+                <noteMoyenne>4.9</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>ECON101</cours>
+                <titre>Microéconomie complète</titre>
+                <datePublication>2025-10-06</datePublication>
+                <noteMoyenne>4.8</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>ECON201</cours>
+                <titre>Économétrie - méthodes et applications</titre>
+                <datePublication>2025-10-22</datePublication>
+                <noteMoyenne>4.7</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Légende du campus</objet>
+            <objet>Badge économie</objet>
+            <objet>Titre élite</objet>
+            <objet>Effet holographique</objet>
+            <objet>Thème néon</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Parfait, tout est expliqué</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Incroyable travail</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Je recommande vivement</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="6">
+        <nomUtilisateur>felix_moreau</nomUtilisateur>
+        <email>felix.moreau@univ.be</email>
+        <dateInscription>2025-09-23</dateInscription>
+        <points>180</points>
+        <niveau>1</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>LANG100</cours>
+                <titre>Anglais académique - notes de cours</titre>
+                <datePublication>2025-10-12</datePublication>
+                <noteMoyenne>3.2</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Débutant</objet>
+            <objet>Cadre simple</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Peut mieux faire</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="7">
+        <nomUtilisateur>giulia_ferrari</nomUtilisateur>
+        <email>giulia.ferrari@univ.be</email>
+        <dateInscription>2025-09-24</dateInscription>
+        <points>1580</points>
+        <niveau>6</niveau>
+        <titreActif>Titre mentor</titreActif>
+        <resumes>
+            <resume>
+                <cours>PHYS100</cours>
+                <titre>Physique générale - synthèse</titre>
+                <datePublication>2025-10-02</datePublication>
+                <noteMoyenne>4.4</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>PHYS101</cours>
+                <titre>Mécanique classique</titre>
+                <datePublication>2025-10-14</datePublication>
+                <noteMoyenne>4.3</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>PHYS200</cours>
+                <titre>Thermodynamique résumé</titre>
+                <datePublication>2025-10-25</datePublication>
+                <noteMoyenne>4.1</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre mentor</objet>
+            <objet>Badge physique</objet>
+            <objet>Effet feu</objet>
+            <objet>Icône trophée</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Résumé de grande qualité</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bien expliqué</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="8">
+        <nomUtilisateur>hugo_petit</nomUtilisateur>
+        <email>hugo.petit@univ.be</email>
+        <dateInscription>2025-09-25</dateInscription>
+        <points>650</points>
+        <niveau>3</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>MGMT100</cours>
+                <titre>Introduction au management</titre>
+                <datePublication>2025-10-09</datePublication>
+                <noteMoyenne>3.8</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>MGMT200</cours>
+                <titre>Gestion de projet - méthodes agiles</titre>
+                <datePublication>2025-10-19</datePublication>
+                <noteMoyenne>3.9</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur actif</objet>
+            <objet>Badge participation</objet>
+            <objet>Icône livre</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bonne synthèse</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Manque quelques détails</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="9">
+        <nomUtilisateur>isabelle_lambert</nomUtilisateur>
+        <email>isabelle.lambert@univ.be</email>
+        <dateInscription>2025-09-26</dateInscription>
+        <points>2750</points>
+        <niveau>8</niveau>
+        <titreActif>Titre VIP</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH302</cours>
+                <titre>Sécurité informatique - concepts clés</titre>
+                <datePublication>2025-09-30</datePublication>
+                <noteMoyenne>4.7</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH308</cours>
+                <titre>Cloud computing synthèse</titre>
+                <datePublication>2025-10-11</datePublication>
+                <noteMoyenne>4.6</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH309</cours>
+                <titre>Big Data - technologies et usages</titre>
+                <datePublication>2025-10-23</datePublication>
+                <noteMoyenne>4.5</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre VIP</objet>
+            <objet>Badge or</objet>
+            <objet>Cadre doré</objet>
+            <objet>Thème sombre premium</objet>
+            <objet>Effet glace</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Excellent travail</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Très bien structuré</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Recommandé</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="10">
+        <nomUtilisateur>julien_simon</nomUtilisateur>
+        <email>julien.simon@univ.be</email>
+        <dateInscription>2025-09-27</dateInscription>
+        <points>320</points>
+        <niveau>2</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH101</cours>
+                <titre>Algorithmique de base</titre>
+                <datePublication>2025-10-16</datePublication>
+                <noteMoyenne>3.6</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Apprenti</objet>
+            <objet>Badge participation</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Correct</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Agréable à lire</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="11">
+        <nomUtilisateur>karine_dubois</nomUtilisateur>
+        <email>karine.dubois@univ.be</email>
+        <dateInscription>2025-09-28</dateInscription>
+        <points>1900</points>
+        <niveau>6</niveau>
+        <titreActif>Maître du savoir</titreActif>
+        <resumes>
+            <resume>
+                <cours>LANG200</cours>
+                <titre>Anglais avancé - grammaire et style</titre>
+                <datePublication>2025-10-04</datePublication>
+                <noteMoyenne>4.4</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>LANG201</cours>
+                <titre>Rédaction scientifique - guide pratique</titre>
+                <datePublication>2025-10-17</datePublication>
+                <noteMoyenne>4.6</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Maître du savoir</objet>
+            <objet>Cadre arc-en-ciel</objet>
+            <objet>Thème pastel</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Magnifiquement rédigé</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très pédagogique</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="12">
+        <nomUtilisateur>lucas_henry</nomUtilisateur>
+        <email>lucas.henry@univ.be</email>
+        <dateInscription>2025-09-29</dateInscription>
+        <points>540</points>
+        <niveau>3</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH200</cours>
+                <titre>POO - concepts fondamentaux</titre>
+                <datePublication>2025-10-07</datePublication>
+                <noteMoyenne>3.7</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH202</cours>
+                <titre>Développement web - HTML/CSS/JS</titre>
+                <datePublication>2025-10-18</datePublication>
+                <noteMoyenne>3.9</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur actif</objet>
+            <objet>Icône fusée</objet>
+            <objet>Badge fidélité</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bien fait</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Pourrait être plus détaillé</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="13">
+        <nomUtilisateur>marie_thomas</nomUtilisateur>
+        <email>marie.thomas@univ.be</email>
+        <dateInscription>2025-10-01</dateInscription>
+        <points>1100</points>
+        <niveau>4</niveau>
+        <titreActif>Top Contributeur</titreActif>
+        <resumes>
+            <resume>
+                <cours>MATH101</cours>
+                <titre>Analyse 1 - intégrales et dérivées</titre>
+                <datePublication>2025-10-13</datePublication>
+                <noteMoyenne>4.3</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>MATH102</cours>
+                <titre>Analyse 2 - suites et séries</titre>
+                <datePublication>2025-10-24</datePublication>
+                <noteMoyenne>4.2</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Top Contributeur</objet>
+            <objet>Expert SQL</objet>
+            <objet>Icône cerveau</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bon contenu</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>M'a aidée à passer l'exam</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="14">
+        <nomUtilisateur>nicolas_robert</nomUtilisateur>
+        <email>nicolas.robert@univ.be</email>
+        <dateInscription>2025-10-02</dateInscription>
+        <points>75</points>
+        <niveau>1</niveau>
+        <titreActif></titreActif>
+        <resumes>
+        </resumes>
+        <achats>
+            <objet>Débutant</objet>
+        </achats>
+        <evaluationsRecues>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="15">
+        <nomUtilisateur>olivia_richard</nomUtilisateur>
+        <email>olivia.richard@univ.be</email>
+        <dateInscription>2025-10-03</dateInscription>
+        <points>760</points>
+        <niveau>3</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>MGMT201</cours>
+                <titre>Entrepreneuriat - de l'idée au projet</titre>
+                <datePublication>2025-10-21</datePublication>
+                <noteMoyenne>4.0</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>MGMT202</cours>
+                <titre>Management stratégique synthèse</titre>
+                <datePublication>2025-10-28</datePublication>
+                <noteMoyenne>3.8</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur expert</objet>
+            <objet>Icône cible</objet>
+            <objet>Profil sombre</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très inspirant</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Résumé clair et concis</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="16">
+        <nomUtilisateur>pierre_blanc</nomUtilisateur>
+        <email>pierre.blanc@univ.be</email>
+        <dateInscription>2025-10-04</dateInscription>
+        <points>1450</points>
+        <niveau>5</niveau>
+        <titreActif>Titre mentor</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH300</cours>
+                <titre>Systèmes d'exploitation - processus et mémoire</titre>
+                <datePublication>2025-10-10</datePublication>
+                <noteMoyenne>4.5</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH301</cours>
+                <titre>Réseaux - protocoles essentiels</titre>
+                <datePublication>2025-10-20</datePublication>
+                <noteMoyenne>4.4</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre mentor</objet>
+            <objet>Badge argent</objet>
+            <objet>Thème nuit</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Top, merci beaucoup</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bien rédigé</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="17">
+        <nomUtilisateur>quentin_garcia</nomUtilisateur>
+        <email>quentin.garcia@univ.be</email>
+        <dateInscription>2025-10-05</dateInscription>
+        <points>230</points>
+        <niveau>1</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>PHYS102</cours>
+                <titre>Électricité et magnétisme - fiches</titre>
+                <datePublication>2025-10-26</datePublication>
+                <noteMoyenne>3.4</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Apprenti</objet>
+            <objet>Icône éclair</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Basique mais utile</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="18">
+        <nomUtilisateur>rachel_martinez</nomUtilisateur>
+        <email>rachel.martinez@univ.be</email>
+        <dateInscription>2025-10-06</dateInscription>
+        <points>2300</points>
+        <niveau>7</niveau>
+        <titreActif>Titre professeur</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH304</cours>
+                <titre>Génie logiciel - design patterns</titre>
+                <datePublication>2025-10-08</datePublication>
+                <noteMoyenne>4.8</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH306</cours>
+                <titre>Compilation - analyseurs et grammaires</titre>
+                <datePublication>2025-10-15</datePublication>
+                <noteMoyenne>4.7</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH307</cours>
+                <titre>Programmation concurrente - threads et locks</titre>
+                <datePublication>2025-10-27</datePublication>
+                <noteMoyenne>4.6</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre professeur</objet>
+            <objet>Badge diamant</objet>
+            <objet>Effet holographique</objet>
+            <objet>Cadre doré</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Incroyable maîtrise du sujet</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Référence absolue</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très technique et complet</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="19">
+        <nomUtilisateur>samuel_wilson</nomUtilisateur>
+        <email>samuel.wilson@univ.be</email>
+        <dateInscription>2025-10-07</dateInscription>
+        <points>490</points>
+        <niveau>2</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>ECON102</cours>
+                <titre>Macroéconomie - indicateurs clés</titre>
+                <datePublication>2025-10-22</datePublication>
+                <noteMoyenne>3.6</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur actif</objet>
+            <objet>Badge participation</objet>
+            <objet>Profil clair</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Acceptable</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bien pour débuter</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="20">
+        <nomUtilisateur>therese_anderson</nomUtilisateur>
+        <email>therese.anderson@univ.be</email>
+        <dateInscription>2025-10-08</dateInscription>
+        <points>1700</points>
+        <niveau>6</niveau>
+        <titreActif>Top Contributeur</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH312</cours>
+                <titre>Vision par ordinateur - réseaux de neurones</titre>
+                <datePublication>2025-10-12</datePublication>
+                <noteMoyenne>4.5</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH311</cours>
+                <titre>Intelligence artificielle avancée</titre>
+                <datePublication>2025-10-23</datePublication>
+                <noteMoyenne>4.4</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Top Contributeur</objet>
+            <objet>Badge IA</objet>
+            <objet>Effet feu</objet>
+            <objet>Thème sombre premium</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Vraiment excellent</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très bien fait</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="21">
+        <nomUtilisateur>ugo_taylor</nomUtilisateur>
+        <email>ugo.taylor@univ.be</email>
+        <dateInscription>2025-10-09</dateInscription>
+        <points>140</points>
+        <niveau>1</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>LANG101</cours>
+                <titre>Communication écrite - conseils pratiques</titre>
+                <datePublication>2025-10-29</datePublication>
+                <noteMoyenne>3.1</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Débutant</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Peut être amélioré</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="22">
+        <nomUtilisateur>valerie_jackson</nomUtilisateur>
+        <email>valerie.jackson@univ.be</email>
+        <dateInscription>2025-10-10</dateInscription>
+        <points>980</points>
+        <niveau>4</niveau>
+        <titreActif>Titre étudiant modèle</titreActif>
+        <resumes>
+            <resume>
+                <cours>MATH204</cours>
+                <titre>Statistiques - estimateurs et tests</titre>
+                <datePublication>2025-10-16</datePublication>
+                <noteMoyenne>4.2</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>MATH202</cours>
+                <titre>Processus stochastiques - chaînes de Markov</titre>
+                <datePublication>2025-10-26</datePublication>
+                <noteMoyenne>4.0</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre étudiant modèle</objet>
+            <objet>Badge math</objet>
+            <objet>Icône cerveau</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bien structuré</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Compréhensible et précis</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="23">
+        <nomUtilisateur>william_clark</nomUtilisateur>
+        <email>william.clark@univ.be</email>
+        <dateInscription>2025-10-11</dateInscription>
+        <points>2050</points>
+        <niveau>7</niveau>
+        <titreActif>Maître du savoir</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH203</cours>
+                <titre>Bases de données avancées - optimisation</titre>
+                <datePublication>2025-10-14</datePublication>
+                <noteMoyenne>4.7</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH303</cours>
+                <titre>SQL avancé - requêtes complexes</titre>
+                <datePublication>2025-10-24</datePublication>
+                <noteMoyenne>4.8</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH305</cours>
+                <titre>Architecture des ordinateurs - pipeline</titre>
+                <datePublication>2025-11-01</datePublication>
+                <noteMoyenne>4.5</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Maître du savoir</objet>
+            <objet>Expert SQL</objet>
+            <objet>Badge or</objet>
+            <objet>Effet brillant</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Le must sur ce sujet</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Parfaitement rédigé</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="24">
+        <nomUtilisateur>xavier_lewis</nomUtilisateur>
+        <email>xavier.lewis@univ.be</email>
+        <dateInscription>2025-10-12</dateInscription>
+        <points>390</points>
+        <niveau>2</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours></cours>
+                <titre>Économie internationale - échanges globaux</titre>
+                <datePublication>2025-10-30</datePublication>
+                <noteMoyenne>3.5</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur actif</objet>
+            <objet>Icône livre</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Correct</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bonne introduction</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="25">
+        <nomUtilisateur>yasmine_hall</nomUtilisateur>
+        <email>yasmine.hall@univ.be</email>
+        <dateInscription>2025-10-13</dateInscription>
+        <points>1350</points>
+        <niveau>5</niveau>
+        <titreActif>Top Contributeur</titreActif>
+        <resumes>
+            <resume>
+                <cours>PHYS201</cours>
+                <titre>Optique - ondes et lentilles</titre>
+                <datePublication>2025-10-18</datePublication>
+                <noteMoyenne>4.4</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>PHYS102</cours>
+                <titre>Électromagnétisme - loi de Gauss</titre>
+                <datePublication>2025-10-28</datePublication>
+                <noteMoyenne>4.2</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Top Contributeur</objet>
+            <objet>Badge physique</objet>
+            <objet>Thème pastel</objet>
+            <objet>Cadre arc-en-ciel</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Excellent pour réviser</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Bravo, très pédagogique</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="26">
+        <nomUtilisateur>zachary_allen</nomUtilisateur>
+        <email>zachary.allen@univ.be</email>
+        <dateInscription>2025-10-14</dateInscription>
+        <points>610</points>
+        <niveau>3</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH102</cours>
+                <titre>Structures de données - arbres et graphes</titre>
+                <datePublication>2025-10-31</datePublication>
+                <noteMoyenne>3.8</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH201</cours>
+                <titre>Programmation avancée - récursivité</titre>
+                <datePublication>2025-11-05</datePublication>
+                <noteMoyenne>3.7</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur expert</objet>
+            <objet>Icône fusée</objet>
+            <objet>Badge fidélité</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bien expliqué</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Quelques imprécisions</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="27">
+        <nomUtilisateur>amandine_scott</nomUtilisateur>
+        <email>amandine.scott@univ.be</email>
+        <dateInscription>2025-10-15</dateInscription>
+        <points>1650</points>
+        <niveau>6</niveau>
+        <titreActif>Titre mentor</titreActif>
+        <resumes>
+            <resume>
+                <cours>LANG102</cours>
+                <titre>Communication orale - prise de parole en public</titre>
+                <datePublication>2025-10-19</datePublication>
+                <noteMoyenne>4.3</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>LANG201</cours>
+                <titre>Rédaction scientifique - structure d'un article</titre>
+                <datePublication>2025-10-29</datePublication>
+                <noteMoyenne>4.5</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre mentor</objet>
+            <objet>Cadre premium</objet>
+            <objet>Effet glace</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très bien présenté</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Indispensable pour l'oral</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="28">
+        <nomUtilisateur>baptiste_young</nomUtilisateur>
+        <email>baptiste.young@univ.be</email>
+        <dateInscription>2025-10-16</dateInscription>
+        <points>90</points>
+        <niveau>1</niveau>
+        <titreActif></titreActif>
+        <resumes>
+        </resumes>
+        <achats>
+            <objet>Débutant</objet>
+        </achats>
+        <evaluationsRecues>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="29">
+        <nomUtilisateur>claire_hernandez</nomUtilisateur>
+        <email>claire.hernandez@univ.be</email>
+        <dateInscription>2025-10-17</dateInscription>
+        <points>1820</points>
+        <niveau>6</niveau>
+        <titreActif>Maître du savoir</titreActif>
+        <resumes>
+            <resume>
+                <cours>ECON101</cours>
+                <titre>Microéconomie - offre et demande</titre>
+                <datePublication>2025-10-21</datePublication>
+                <noteMoyenne>4.5</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>ECON102</cours>
+                <titre>Macroéconomie - modèle IS-LM</titre>
+                <datePublication>2025-11-02</datePublication>
+                <noteMoyenne>4.4</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>ECON200</cours>
+                <titre>Économie internationale - balance des paiements</titre>
+                <datePublication>2025-11-08</datePublication>
+                <noteMoyenne>4.3</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Maître savoir</objet>
+            <objet>Badge économie</objet>
+            <objet>Thème néon</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Très clair et complet</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bon résumé</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="30">
+        <nomUtilisateur>damien_king</nomUtilisateur>
+        <email>damien.king@univ.be</email>
+        <dateInscription>2025-10-18</dateInscription>
+        <points>700</points>
+        <niveau>3</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH305</cours>
+                <titre>Architecture des ordinateurs - mémoire cache</titre>
+                <datePublication>2025-11-03</datePublication>
+                <noteMoyenne>3.9</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur expert</objet>
+            <objet>Badge bronze</objet>
+            <objet>Icône trophée</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bon niveau de détail</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Satisfaisant</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="31">
+        <nomUtilisateur>elena_wright</nomUtilisateur>
+        <email>elena.wright@univ.be</email>
+        <dateInscription>2025-10-19</dateInscription>
+        <points>2450</points>
+        <niveau>8</niveau>
+        <titreActif>Titre VIP</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH310</cours>
+                <titre>Machine learning - supervisé et non supervisé</titre>
+                <datePublication>2025-10-25</datePublication>
+                <noteMoyenne>4.9</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH312</cours>
+                <titre>Vision par ordinateur - CNN avancés</titre>
+                <datePublication>2025-11-04</datePublication>
+                <noteMoyenne>4.8</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH311</cours>
+                <titre>IA - planification et recherche heuristique</titre>
+                <datePublication>2025-11-10</datePublication>
+                <noteMoyenne>4.7</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre VIP</objet>
+            <objet>Badge IA</objet>
+            <objet>Badge diamant</objet>
+            <objet>Effet holographique</objet>
+            <objet>Thème sombre premium</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Absolument remarquable</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Meilleur ressource du site</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Passionnant et rigoureux</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="32">
+        <nomUtilisateur>florian_lopez</nomUtilisateur>
+        <email>florian.lopez@univ.be</email>
+        <dateInscription>2025-10-20</dateInscription>
+        <points>280</points>
+        <niveau>1</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>MATH100</cours>
+                <titre>Maths discrètes - graphes et combinatoire</titre>
+                <datePublication>2025-11-06</datePublication>
+                <noteMoyenne>3.3</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Apprenti</objet>
+            <objet>Cadre simple</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Passable</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="33">
+        <nomUtilisateur>gaelle_hill</nomUtilisateur>
+        <email>gaelle.hill@univ.be</email>
+        <dateInscription>2025-10-21</dateInscription>
+        <points>1200</points>
+        <niveau>5</niveau>
+        <titreActif>Top Contributeur</titreActif>
+        <resumes>
+            <resume>
+                <cours>MGMT200</cours>
+                <titre>Gestion de projet - PRINCE2 et PMI</titre>
+                <datePublication>2025-10-27</datePublication>
+                <noteMoyenne>4.3</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>MGMT202</cours>
+                <titre>Management stratégique - analyse SWOT</titre>
+                <datePublication>2025-11-07</datePublication>
+                <noteMoyenne>4.2</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Top Contributeur</objet>
+            <objet>Icône flamme</objet>
+            <objet>Badge participation</objet>
+            <objet>Profil sombre</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Pratique et bien organisé</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Merci pour ce résumé</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="34">
+        <nomUtilisateur>hadrien_green</nomUtilisateur>
+        <email>hadrien.green@univ.be</email>
+        <dateInscription>2025-10-22</dateInscription>
+        <points>1050</points>
+        <niveau>4</niveau>
+        <titreActif>Titre étudiant modèle</titreActif>
+        <resumes>
+            <resume>
+                <cours>PHYS100</cours>
+                <titre>Physique générale - mécanique newtonienne</titre>
+                <datePublication>2025-11-01</datePublication>
+                <noteMoyenne>4.1</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>PHYS200</cours>
+                <titre>Thermodynamique - cycles et entropie</titre>
+                <datePublication>2025-11-09</datePublication>
+                <noteMoyenne>4.2</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre étudiant modèle</objet>
+            <objet>Badge bronze</objet>
+            <objet>Icône cible</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Solide et rigoureux</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très bien</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="35">
+        <nomUtilisateur>ines_adams</nomUtilisateur>
+        <email>ines.adams@univ.be</email>
+        <dateInscription>2025-10-23</dateInscription>
+        <points>55</points>
+        <niveau>1</niveau>
+        <titreActif></titreActif>
+        <resumes>
+        </resumes>
+        <achats>
+            <objet>Débutant</objet>
+        </achats>
+        <evaluationsRecues>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="36">
+        <nomUtilisateur>jerome_baker</nomUtilisateur>
+        <email>jerome.baker@univ.be</email>
+        <dateInscription>2025-10-24</dateInscription>
+        <points>1480</points>
+        <niveau></niveau>
+        <titreActif>Top Contributeur</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH302</cours>
+                <titre>Sécurité - cryptographie et protocoles</titre>
+                <datePublication>2025-11-02</datePublication>
+                <noteMoyenne>4.6</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH301</cours>
+                <titre>Réseaux - TCP/IP en profondeur</titre>
+                <datePublication>2025-11-11</datePublication>
+                <noteMoyenne>4.4</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Top Contributeur</objet>
+            <objet>Badge argent</objet>
+            <objet>Effet brillant</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Précis et très utile</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bon travail</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="37">
+        <nomUtilisateur>laura_campbell</nomUtilisateur>
+        <email>laura.campbell@univ.be</email>
+        <dateInscription>2025-10-25</dateInscription>
+        <points>410</points>
+        <niveau>2</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>LANG100</cours>
+                <titre>Anglais académique - vocabulaire essentiel</titre>
+                <datePublication>2025-11-06</datePublication>
+                <noteMoyenne>3.5</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur actif</objet>
+            <objet>Icône livre</objet>
+            <objet>Badge participation</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Bien pour les débutants</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Merci pour le partage</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="38">
+        <nomUtilisateur>mathieu_mitchell</nomUtilisateur>
+        <email>mathieu.mitchell@univ.be</email>
+        <dateInscription>2025-10-26</dateInscription>
+        <points>2180</points>
+        <niveau></niveau>
+        <titreActif>Maître du savoir</titreActif>
+        <resumes>
+            <resume>
+                <cours>MATH201</cours>
+                <titre>Probabilités - variables aléatoires continues</titre>
+                <datePublication>2025-11-04</datePublication>
+                <noteMoyenne>4.7</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>MATH202</cours>
+                <titre>Statistiques - régression et corrélation</titre>
+                <datePublication>2025-11-12</datePublication>
+                <noteMoyenne>4.6</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>MATH204</cours>
+                <titre>Optimisation - méthodes numériques</titre>
+                <datePublication>2025-11-18</datePublication>
+                <noteMoyenne>4.5</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Maître du savoir</objet>
+            <objet>Badge math</objet>
+            <objet>Badge or</objet>
+            <objet>Thème nuit</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Brillant</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Très haute qualité</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="39">
+        <nomUtilisateur>noemie_perez</nomUtilisateur>
+        <email>noemie.perez@univ.be</email>
+        <dateInscription>2025-10-27</dateInscription>
+        <points>330</points>
+        <niveau>2</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>MGMT100</cours>
+                <titre>Management - théories classiques</titre>
+                <datePublication>2025-11-10</datePublication>
+                <noteMoyenne>3.6</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Apprenti</objet>
+            <objet>Badge participation</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Résumé correct</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="40">
+        <nomUtilisateur>oscar_roberts</nomUtilisateur>
+        <email>oscar.roberts@univ.be</email>
+        <dateInscription>2025-10-28</dateInscription>
+        <points></points>
+        <niveau>6</niveau>
+        <titreActif>Titre mentor</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH309</cours>
+                <titre>Big Data - Hadoop et Spark</titre>
+                <datePublication>2025-11-07</datePublication>
+                <noteMoyenne>4.5</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH308</cours>
+                <titre>Cloud computing - AWS et Azure</titre>
+                <datePublication>2025-11-14</datePublication>
+                <noteMoyenne>4.4</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre mentor</objet>
+            <objet>Badge argent</objet>
+            <objet>Effet feu</objet>
+            <objet>Cadre premium</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Moderne et très complet</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bien sourcé</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="41">
+        <nomUtilisateur>pauline_turner</nomUtilisateur>
+        <email>pauline.turner@univ.be</email>
+        <dateInscription>2025-10-29</dateInscription>
+        <points>120</points>
+        <niveau>1</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>ECON101</cours>
+                <titre>Microéconomie - élasticité</titre>
+                <datePublication>2025-11-15</datePublication>
+                <noteMoyenne>3.2</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Débutant</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Basique mais utile</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="42">
+        <nomUtilisateur>romain_phillips</nomUtilisateur>
+        <email>romain.phillips@univ.be</email>
+        <dateInscription>2025-10-30</dateInscription>
+        <points>900</points>
+        <niveau>4</niveau>
+        <titreActif>Titre étudiant modèle</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH200</cours>
+                <titre>POO - héritage et polymorphisme</titre>
+                <datePublication>2025-11-08</datePublication>
+                <noteMoyenne>4.1</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH301</cours>
+                <titre>Programmation avancée - patrons de conception</titre>
+                <datePublication>2025-11-16</datePublication>
+                <noteMoyenne>4.0</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre étudiant modèle</objet>
+            <objet>Badge bronze</objet>
+            <objet>Icône flamme</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Clair et structuré</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très utile pour le projet</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="43">
+        <nomUtilisateur>sarah_evans</nomUtilisateur>
+        <email>sarah.evans@univ.be</email>
+        <dateInscription>2025-11-01</dateInscription>
+        <points>2900</points>
+        <niveau>9</niveau>
+        <titreActif>Titre élite</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH304</cours>
+                <titre>Génie logiciel - tests et qualité</titre>
+                <datePublication>2025-11-05</datePublication>
+                <noteMoyenne>4.9</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH300</cours>
+                <titre>Systèmes d'exploitation - ordonnancement</titre>
+                <datePublication>2025-11-13</datePublication>
+                <noteMoyenne>4.8</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INOH307</cours>
+                <titre>Programmation concurrente - deadlocks</titre>
+                <datePublication>2025-11-19</datePublication>
+                <noteMoyenne>4.9</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre élite</objet>
+            <objet>Badge diamant</objet>
+            <objet>Cadre doré</objet>
+            <objet>Effet holographique</objet>
+            <objet>Thème néon</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Rien à redire, parfait</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Référence pour tout le promo</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Merci énormément</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="44">
+        <nomUtilisateur>titouan_morgan</nomUtilisateur>
+        <email>titouan.morgan@univ.be</email>
+        <dateInscription>2025-11-02</dateInscription>
+        <points>560</points>
+        <niveau>3</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>MATH101</cours>
+                <titre>Analyse 1 - limites et continuité</titre>
+                <datePublication>2025-11-11</datePublication>
+                <noteMoyenne>3.8</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur actif</objet>
+            <objet>Icône étoile</objet>
+            <objet>Badge fidélité</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bon début</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Quelques erreurs mais utile</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="45">
+        <nomUtilisateur>ulrike_cooper</nomUtilisateur>
+        <email>ulrike.cooper@univ.be</email>
+        <dateInscription>2025-11-03</dateInscription>
+        <points>1550</points>
+        <niveau>5</niveau>
+        <titreActif>Top Contributeur</titreActif>
+        <resumes>
+            <resume>
+                <cours>PHYS101</cours>
+                <titre>Mécanique - dynamique et cinématique</titre>
+                <datePublication>2025-11-09</datePublication>
+                <noteMoyenne>4.4</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>PHYS20</cours>
+                <titre>Optique - interférences et diffraction</titre>
+                <datePublication>2025-11-17</datePublication>
+                <noteMoyenne>4.3</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Top Contributeur</objet>
+            <objet>Badge physique</objet>
+            <objet>Cadre arc-en-ciel</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bien rédigé et clair</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très bon résumé</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="46">
+        <nomUtilisateur>victor_reed</nomUtilisateur>
+        <email>victor.reed@univ.be</email>
+        <dateInscription>2025-11-04</dateInscription>
+        <points>200</points>
+        <niveau>1</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>MGMT201</cours>
+                <titre>Entrepreneuriat - business model canvas</titre>
+                <datePublication>2025-11-14</datePublication>
+                <noteMoyenne>3.3</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Apprenti</objet>
+            <objet>Cadre simple</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Peut être développé davantage</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="47">
+        <nomUtilisateur>wendy_cook</nomUtilisateur>
+        <email>wendy.cook@univ.be</email>
+        <dateInscription>2025-11-05</dateInscription>
+        <points>1300</points>
+        <niveau>5</niveau>
+        <titreActif>Top Contributeur</titreActif>
+        <resumes>
+            <resume>
+                <cours>ECON201</cours>
+                <titre>Économétrie - moindres carrés ordinaires</titre>
+                <datePublication>2025-11-12</datePublication>
+                <noteMoyenne>4.4</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>ECON200</cours>
+                <titre>Économie internationale - commerce et tarifs</titre>
+                <datePublication>2025-11-20</datePublication>
+                <noteMoyenne>4.2</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Top Contributeur</objet>
+            <objet>Badge économie</objet>
+            <objet>Thème pastel</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Très complet</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Excellent pour les révisions</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="48">
+        <nomUtilisateur>xavier_bailey</nomUtilisateur>
+        <email>xavier.bailey@univ.be</email>
+        <dateInscription>2025-11-06</dateInscription>
+        <points>840</points>
+        <niveau>3</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH102</cours>
+                <titre>Structures de données - listes chaînées</titre>
+                <datePublication>2025-11-15</datePublication>
+                <noteMoyenne>3.9</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH100</cours>
+                <titre>Programmation - fonctions et modules</titre>
+                <datePublication>2025-11-21</datePublication>
+                <noteMoyenne>3.8</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur expert</objet>
+            <objet>Icône cerveau</objet>
+            <objet>Badge bronze</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Bien fait pour ce niveau</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Correct mais incomplet</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="49">
+        <nomUtilisateur>yoann_bell</nomUtilisateur>
+        <email>yoann.bell@univ.be</email>
+        <dateInscription>2025-11-07</dateInscription>
+        <points>2600</points>
+        <niveau>8</niveau>
+        <titreActif>Titre VIP</titreActif>
+        <resumes>
+            <resume>
+                <cours>INFOH306</cours>
+                <titre>Compilation - automates et langages formels</titre>
+                <datePublication>2025-11-13</datePublication>
+                <noteMoyenne>4.8</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH305</cours>
+                <titre>Architecture - jeux d'instructions RISC/CISC</titre>
+                <datePublication>2025-11-19</datePublication>
+                <noteMoyenne>4.7</noteMoyenne>
+            </resume>
+            <resume>
+                <cours>INFOH300</cours>
+                <titre>Systèmes d'exploitation - virtualisation</titre>
+                <datePublication>2025-11-24</datePublication>
+                <noteMoyenne>4.6</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Titre VIP</objet>
+            <objet>Badge or</objet>
+            <objet>Effet glace</objet>
+            <objet>Cadre doré</objet>
+            <objet>Thème sombre premium</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Très impressionnant</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>5</note>
+                <commentaire>Super qualité</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Complet et bien structuré</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+    <utilisateur id="50">
+        <nomUtilisateur>zoe_murphy</nomUtilisateur>
+        <email>zoe.murphy@univ.be</email>
+        <dateInscription>2025-11-08</dateInscription>
+        <points>460</points>
+        <niveau>2</niveau>
+        <titreActif></titreActif>
+        <resumes>
+            <resume>
+                <cours>LANG102</cours>
+                <titre>Communication orale - argumentation</titre>
+                <datePublication>2025-11-18</datePublication>
+                <noteMoyenne>3.7</noteMoyenne>
+            </resume>
+        </resumes>
+        <achats>
+            <objet>Contributeur passif</objet>
+            <objet>Icône étoile</objet>
+            <objet>Profil clair</objet>
+        </achats>
+        <evaluationsRecues>
+            <evaluation>
+                <note>4</note>
+                <commentaire>Agréable à lire</commentaire>
+            </evaluation>
+            <evaluation>
+                <note>3</note>
+                <commentaire>Bien pour une première fois</commentaire>
+            </evaluation>
+        </evaluationsRecues>
+    </utilisateur>
+
+</utilisateurs>

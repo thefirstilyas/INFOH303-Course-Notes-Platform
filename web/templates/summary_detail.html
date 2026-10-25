@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block title %}{{ resume.titre }}{% endblock %}
+{% block page_title %}Résumé{% endblock %}
+
+{% block content %}
+<div class="fade-in">
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title"><i class="fa-solid fa-file-lines"></i> Détail du résumé</h1>
+      <p class="page-subtitle">Contenu, évaluations et notes des autres utilisateurs</p>
+    </div>
+    <div class="page-actions">
+      <a href="{{ url_for('summaries') }}" class="btn btn-outline-secondary">
+        <i class="fa-solid fa-arrow-left me-2"></i>Retour
+      </a>
+    </div>
+  </div>
+
+  <!-- Résumé header -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <span class="badge" style="background:rgba(99,102,241,0.2);color:#818cf8;font-size:0.75rem">{{ resume.code_cours }}</span>
+        <span class="text-muted small">{{ resume.date_publication }}</span>
+      </div>
+      <h4 class="fw-bold mb-1">{{ resume.titre }}</h4>
+      <p class="text-muted small mb-3">{{ resume.nom_cours }}</p>
+
+      <!-- Auteur -->
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <div class="avatar" style="width:32px;height:32px;font-size:0.8rem">{{ resume.nom_utilisateur[0]|upper }}</div>
+        <span class="fw-semibold">{{ resume.nom_utilisateur }}</span>
+        {% if resume.titre_certif %}
+          <span style="display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:0.6rem;font-weight:700;padding:2px 7px;border-radius:20px">
+            <i class="fa-solid fa-crown" style="font-size:0.55rem"></i>{{ resume.titre_certif }}
+          </span>
+        {% endif %}
+        {% if resume.badge_actif %}
+          <span style="font-size:0.9rem" title="{{ resume.badge_actif }}">{{ badge_icons.get(resume.badge_actif, '🛡️') }}</span>
+        {% endif %}
+      </div>
+
+      {% if resume.description %}
+        <p class="mb-3">{{ resume.description }}</p>
+      {% endif %}
+
+      <!-- Note moyenne -->
+      {% if resume.note_moyenne %}
+      <div class="d-flex align-items-center gap-2">
+        {% for i in range(1, 6) %}
+          <i class="fa-solid fa-star{% if i > resume.note_moyenne|round(0,'ceil')|int %}-half-stroke{% endif %}"
+             style="color:{% if i <= resume.note_moyenne %}#f59e0b{% else %}#374151{% endif %}"></i>
+        {% endfor %}
+        <span class="text-muted small">{{ "%.2f"|format(resume.note_moyenne) }} / 5</span>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Évaluations -->
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h6 class="fw-bold mb-0"><i class="fa-solid fa-comments me-2 text-muted"></i>Évaluations ({{ evals|length }})</h6>
+  </div>
+
+  {% if evals %}
+  <div class="d-flex flex-column gap-3 mb-4">
+    {% for e in evals %}
+    <div class="card">
+      <div class="card-body py-3">
+        <div class="d-flex align-items-center gap-2 mb-2">
+          <div class="avatar" style="width:28px;height:28px;font-size:0.72rem">{{ e.nom_utilisateur[0]|upper }}</div>
+          <span class="fw-semibold small">{{ e.nom_utilisateur }}</span>
+          {% if e.titre_certif %}
+            <span style="display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:0.58rem;font-weight:700;padding:2px 6px;border-radius:20px">
+              <i class="fa-solid fa-crown" style="font-size:0.5rem"></i>{{ e.titre_certif }}
+            </span>
+          {% endif %}
+          {% if e.badge_actif %}
+            <span style="font-size:0.85rem" title="{{ e.badge_actif }}">{{ badge_icons.get(e.badge_actif, '🛡️') }}</span>
+          {% endif %}
+          <span class="text-muted small ms-auto">{{ e.date_eval }}</span>
+        </div>
+        <!-- Étoiles -->
+        <div class="d-flex align-items-center gap-1 mb-2">
+          {% for i in range(1, 6) %}
+            <i class="fa-solid fa-star" style="font-size:0.75rem;color:{% if i <= e.note %}#f59e0b{% else %}#374151{% endif %}"></i>
+          {% endfor %}
+          <span class="text-muted small ms-1">{{ e.note }}/5</span>
+        </div>
+        {% if e.commentaire %}
+          <p class="mb-0 small">{{ e.commentaire }}</p>
+        {% else %}
+          <p class="mb-0 text-muted small fst-italic">Aucun commentaire</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+    <div class="text-center text-muted py-4 mb-4">
+      <i class="fa-solid fa-comment-slash fa-2x mb-2 d-block"></i>
+      Aucune évaluation pour l'instant
+    </div>
+  {% endif %}
+
+  <!-- Formulaire évaluation -->
+  {% if not is_owner %}
+  <div class="card">
+    <div class="card-header"><i class="fa-solid fa-star me-2 text-muted"></i>Laisser une évaluation</div>
+    <div class="card-body">
+      {% if already_evaluated %}
+        <p class="text-muted small mb-0"><i class="fa-solid fa-check-circle text-success me-1"></i>Vous avez déjà évalué ce résumé.</p>
+      {% else %}
+        <form method="POST" action="{{ url_for('summaries_evaluate', rid=resume.id_resume) }}">
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Note</label>
+            <div class="d-flex gap-2">
+              {% for i in range(1, 6) %}
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="note" id="note{{ i }}" value="{{ i }}" required>
+                <label class="form-check-label" for="note{{ i }}">{{ i }} ⭐</label>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Commentaire (optionnel)</label>
+            <textarea name="commentaire" class="form-control" rows="3" placeholder="Votre avis..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane me-1"></i>Soumettre (+5 pts)
+          </button>
+        </form>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}

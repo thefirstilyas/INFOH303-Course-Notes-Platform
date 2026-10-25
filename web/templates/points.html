@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}Mes Points{% endblock %}
+{% block page_title %}Mes Points{% endblock %}
+
+{% block content %}
+<div class="fade-in">
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title"><i class="fa-solid fa-coins"></i> Mes points</h1>
+      <p class="page-subtitle">Solde actuel et historique complet des transactions</p>
+    </div>
+  </div>
+
+  <!-- Balance cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-4">
+      <div class="stat-card">
+        <div class="stat-icon purple"><i class="fa-solid fa-wallet"></i></div>
+        <div>
+          <div class="stat-value">{{ user.nbr_pt }}</div>
+          <div class="stat-label">Solde actuel (pts)</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stat-card">
+        <div class="stat-icon green"><i class="fa-solid fa-arrow-trend-up"></i></div>
+        <div>
+          <div class="stat-value">{{ total_gagnes }}</div>
+          <div class="stat-label">Total gagné (pts)</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stat-card">
+        <div class="stat-icon red"><i class="fa-solid fa-arrow-trend-down"></i></div>
+        <div>
+          <div class="stat-value">{{ total_depenses }}</div>
+          <div class="stat-label">Total dépensé (pts)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How to earn points -->
+  <div class="card mb-4">
+    <div class="card-header d-flex align-items-center gap-2">
+      <i class="fa-solid fa-circle-info text-muted"></i>
+      Comment gagner des points
+    </div>
+    <div class="card-body">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="d-flex align-items-center gap-3">
+            <div class="stat-icon green" style="width:40px;height:40px;font-size:1rem">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+            <div>
+              <div class="fw-semibold">Publier un résumé</div>
+              <div class="text-success small">+10 points</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex align-items-center gap-3">
+            <div class="stat-icon blue" style="width:40px;height:40px;font-size:1rem">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div>
+              <div class="fw-semibold">Évaluer un résumé</div>
+              <div class="text-success small">+5 points (évaluateur + auteur)</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex align-items-center gap-3">
+            <div class="stat-icon red" style="width:40px;height:40px;font-size:1rem">
+              <i class="fa-solid fa-store"></i>
+            </div>
+            <div>
+              <div class="fw-semibold">Acheter dans la boutique</div>
+              <div class="text-danger small">Dépense des points</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transaction history -->
+  <div class="card">
+    <div class="card-header d-flex align-items-center gap-2">
+      <i class="fa-solid fa-list text-muted"></i>
+      Historique des transactions
+      <span class="badge bg-secondary ms-auto">{{ transactions|length }}</span>
+    </div>
+    <div class="table-responsive">
+      <table class="table mb-0">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Source</th>
+            <th class="text-end">Montant</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for tx in transactions %}
+          <tr>
+            <td>
+              {% if tx.type_transaction == 'gain' %}
+                <span class="badge-gain">+ Gain</span>
+              {% else %}
+                <span class="badge-depense">– Dépense</span>
+              {% endif %}
+            </td>
+            <td class="text-muted small">
+              {% if tx.resume_titre %}
+                <i class="fa-solid fa-file-lines me-1"></i>{{ tx.resume_titre[:40] }}
+              {% elif tx.eval_resume_titre %}
+                <i class="fa-solid fa-star me-1"></i>Éval. {{ tx.eval_resume_titre[:35] }}
+              {% elif tx.objet_nom %}
+                <i class="fa-solid fa-store me-1"></i>{{ tx.objet_nom }}
+              {% else %}
+                <i class="fa-solid fa-circle me-1"></i>Transaction
+              {% endif %}
+            </td>
+            <td class="text-end fw-semibold
+              {% if tx.type_transaction == 'gain' %}text-success{% else %}text-danger{% endif %}">
+              {% if tx.type_transaction == 'gain' %}+{% else %}–{% endif %}{{ tx.montant }}
+            </td>
+            <td class="text-muted small">{{ tx.date_transaction }}</td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="4" class="text-center text-muted py-4">
+              <i class="fa-solid fa-inbox fa-2x mb-2 d-block"></i>
+              Aucune transaction
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

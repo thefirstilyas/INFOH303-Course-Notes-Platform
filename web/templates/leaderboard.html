@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}Classement{% endblock %}
+{% block page_title %}Classement{% endblock %}
+
+{% macro titre_badge(nom) %}
+{% if nom %}
+<span style="display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:0.6rem;font-weight:700;padding:2px 7px;border-radius:20px;letter-spacing:0.02em;white-space:nowrap">
+  <i class="fa-solid fa-crown" style="font-size:0.55rem"></i>{{ nom }}
+</span>
+{% endif %}
+{% endmacro %}
+
+{% block content %}
+<div class="fade-in">
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title"><i class="fa-solid fa-trophy"></i> Classement général</h1>
+      <p class="page-subtitle">Top des contributeurs en fonction des points accumulés</p>
+    </div>
+    {% if my_rank %}
+    <div class="page-actions">
+      <span class="badge bg-primary bg-opacity-25 text-primary" style="font-size:0.85rem;padding:0.55rem 0.9rem">
+        <i class="fa-solid fa-user me-1"></i>Votre position : #{{ my_rank }}
+      </span>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Podium top 3 -->
+  {% if rows|length >= 3 %}
+  <div class="row g-3 mb-4 justify-content-center">
+    <!-- 2nd -->
+    <div class="col-4 col-md-3 d-flex align-items-end">
+      <div class="podium-card w-100" style="padding-bottom:1rem">
+        <div class="podium-avatar silver">{{ rows[1].nom_utilisateur[0]|upper }}</div>
+        <div class="fw-semibold small">{{ rows[1].nom_utilisateur }}</div>
+        <div class="mt-1">{{ titre_badge(rows[1].titre_certif) }}</div>
+        <div class="text-muted small">{{ rows[1].nbr_pt }} pts</div>
+        <div class="mt-2 rank-2" style="font-size:1.5rem">🥈</div>
+      </div>
+    </div>
+    <!-- 1st -->
+    <div class="col-4 col-md-3">
+      <div class="podium-card first w-100">
+        <div class="podium-avatar gold">{{ rows[0].nom_utilisateur[0]|upper }}</div>
+        <div class="fw-bold">{{ rows[0].nom_utilisateur }}</div>
+        <div class="mt-1">{{ titre_badge(rows[0].titre_certif) }}</div>
+        <div class="text-muted small">{{ rows[0].nbr_pt }} pts</div>
+        <div class="mt-2 rank-1" style="font-size:2rem">🥇</div>
+        <div class="mt-1">
+          <span class="badge" style="background:rgba(255,215,0,0.2);color:#ffd700">Champion</span>
+        </div>
+      </div>
+    </div>
+    <!-- 3rd -->
+    <div class="col-4 col-md-3 d-flex align-items-end">
+      <div class="podium-card w-100" style="padding-bottom:1rem">
+        <div class="podium-avatar bronze">{{ rows[2].nom_utilisateur[0]|upper }}</div>
+        <div class="fw-semibold small">{{ rows[2].nom_utilisateur }}</div>
+        <div class="mt-1">{{ titre_badge(rows[2].titre_certif) }}</div>
+        <div class="text-muted small">{{ rows[2].nbr_pt }} pts</div>
+        <div class="mt-2 rank-3" style="font-size:1.5rem">🥉</div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Historique mois précédent -->
+  {% if history %}
+  <div class="card mb-4">
+    <div class="card-header d-flex align-items-center gap-2">
+      <i class="fa-solid fa-clock-rotate-left text-muted"></i>
+      Top 5 — {{ history_date }}
+      <span class="badge bg-secondary ms-1" style="font-size:0.65rem">Snapshot mensuel</span>
+    </div>
+    <div class="table-responsive">
+      <table class="table mb-0">
+        <tbody>
+          {% for r in history %}
+          <tr>
+            <td style="width:50px" class="text-muted fw-semibold">#{{ r.rang }}</td>
+            <td>
+              <div class="avatar d-inline-flex me-2" style="width:28px;height:28px;font-size:0.75rem">
+                {{ r.nom_utilisateur[0]|upper }}
+              </div>
+              {{ r.nom_utilisateur }}
+            </td>
+            <td class="text-end text-warning fw-bold">{{ r.nbr_pt }} pts</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Full table -->
+  <div class="card">
+    <div class="card-header d-flex align-items-center gap-2">
+      <i class="fa-solid fa-list-ol text-muted"></i>
+      Classement complet
+    </div>
+    <div class="table-responsive">
+      <table class="table mb-0">
+        <thead>
+          <tr>
+            <th style="width:60px">Rang</th>
+            <th>Utilisateur</th>
+            <th class="text-center">Niveau</th>
+            <th class="text-end">Points</th>
+            <th class="text-center">Résumés</th>
+            <th class="text-center">Évaluations</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in rows %}
+          {% set loop_rank = loop.index %}
+          <tr class="{% if r.id_utilisateur == uid %}table-primary{% endif %}">
+            <td>
+              {% if loop_rank == 1 %}
+                <span class="rank-1 fw-bold">🥇 1</span>
+              {% elif loop_rank == 2 %}
+                <span class="rank-2 fw-bold">🥈 2</span>
+              {% elif loop_rank == 3 %}
+                <span class="rank-3 fw-bold">🥉 3</span>
+              {% else %}
+                <span class="text-muted fw-semibold">{{ loop_rank }}</span>
+              {% endif %}
+            </td>
+            <td>
+              <div class="d-flex align-items-center gap-2">
+                <div class="avatar" style="width:32px;height:32px;font-size:0.8rem">
+                  {{ r.nom_utilisateur[0]|upper }}
+                </div>
+                <span class="fw-semibold">{{ r.nom_utilisateur }}</span>
+                {% if r.id_utilisateur == uid %}
+                  <span class="badge bg-primary bg-opacity-25 text-primary small">Vous</span>
+                {% endif %}
+                {{ titre_badge(r.titre_certif) }}
+                {% if r.badge_actif %}
+                  <span style="font-size:1rem" title="{{ r.badge_actif }}">{{ badge_icons.get(r.badge_actif, '🛡️') }}</span>
+                {% endif %}
+              </div>
+            </td>
+            <td class="text-center">
+              <span class="badge bg-secondary">Niv. {{ r.niveau }}</span>
+            </td>
+            <td class="text-end fw-bold text-warning">{{ r.nbr_pt }}</td>
+            <td class="text-center text-muted">{{ r.nb_resumes }}</td>
+            <td class="text-center text-muted">{{ r.nb_evals }}</td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="6" class="text-center text-muted py-4">Aucun utilisateur</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+{% endblock %}

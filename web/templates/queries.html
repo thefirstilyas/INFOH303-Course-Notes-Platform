@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+{% block title %}Analytique{% endblock %}
+{% block page_title %}Analytique{% endblock %}
+
+{% block content %}
+<div class="fade-in">
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title"><i class="fa-solid fa-chart-bar"></i> Tableau de bord analytique</h1>
+      <p class="page-subtitle">8 requêtes SQL et indicateurs clés de la plateforme</p>
+    </div>
+  </div>
+
+  <!-- Row 1 : Q8 (moyenne) + Q6 (objet le + acheté) -->
+  <div class="row g-3 mb-3">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-file-lines text-muted"></i>
+          Résumés par utilisateur
+        </div>
+        <div class="card-body text-center py-4" id="q8-box">
+          <div class="text-muted small"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-store text-muted"></i>
+          Objet le plus populaire
+        </div>
+        <div class="card-body text-center py-4" id="q6-box">
+          <div class="text-muted small"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-user-slash text-muted"></i>
+          Utilisateurs sans résumé
+        </div>
+        <div class="card-body text-center py-4" id="q5-count-box">
+          <div class="text-muted small"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2 : Q1 classement points (bar chart) -->
+  <div class="row g-3 mb-3">
+    <div class="col-lg-7">
+      <div class="card h-100">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-trophy text-muted"></i>
+          Top 10 – Points par utilisateur
+        </div>
+        <div class="card-body">
+          <canvas id="chart1" height="220"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-5">
+      <div class="card h-100">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-graduation-cap text-muted"></i>
+          Cours le plus actif
+        </div>
+        <div class="card-body" id="q3-box">
+          <div class="text-muted small"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 3 : Q2 utilisateurs actifs + Q5 liste -->
+  <div class="row g-3 mb-3">
+    <div class="col-lg-6">
+      <div class="card h-100">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-users text-muted"></i>
+          Utilisateurs actifs (≥ 3 cours)
+        </div>
+        <div class="card-body p-0" id="q2-box">
+          <div class="p-3 text-muted small"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card h-100">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-user-slash text-muted"></i>
+          Utilisateurs sans résumé
+        </div>
+        <div class="card-body p-0" id="q5-box">
+          <div class="p-3 text-muted small"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 4 : Q4 mieux notés -->
+  <div class="row g-3 mb-3">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-star text-muted"></i>
+          Résumés les mieux notés par cours
+        </div>
+        <div class="card-body p-0" id="q4-box">
+          <div class="p-3 text-muted small"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 5 : Q7 déficit -->
+  <div class="row g-3">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-triangle-exclamation text-warning"></i>
+          Utilisateurs en déficit de points
+        </div>
+        <div class="card-body p-0" id="q7-box">
+          <div class="p-3 text-muted small"><i class="fa-solid fa-spinner fa-spin"></i> Chargement…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+// ── helpers ──────────────────────────────────
+function starHtml(note) {
+  let s = '';
+  for (let i = 1; i <= 5; i++) s += i <= Math.round(note) ? '★' : '☆';
+  return `<span class="stars">${s}</span>`;
+}
+
+function tableHtml(rows, keys, labels) {
+  if (!rows.length) return '<div class="p-3 text-muted small">Aucun résultat</div>';
+  let h = '<div class="table-responsive"><table class="table table-sm mb-0"><thead><tr>';
+  labels.forEach(l => h += `<th>${l}</th>`);
+  h += '</tr></thead><tbody>';
+  rows.forEach(r => {
+    h += '<tr>';
+    keys.forEach(k => h += `<td>${r[k] ?? '—'}</td>`);
+    h += '</tr>';
+  });
+  h += '</tbody></table></div>';
+  return h;
+}
+
+async function fetchQ(n) {
+  const r = await fetch('/api/query/' + n);
+  const d = await r.json();
+  return d.ok ? d.data : [];
+}
+
+// ── charts ───────────────────────────────────
+const chartDefaults = {
+  plugins: { legend: { display: false } },
+  scales: {
+    x: { ticks: { color: '#94a3b8', maxRotation: 35 }, grid: { color: 'rgba(255,255,255,0.05)' } },
+    y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+  }
+};
+
+// ── load all ─────────────────────────────────
+(async () => {
+  // Q1 – bar chart
+  const q1 = await fetchQ(1);
+  new Chart(document.getElementById('chart1'), {
+    type: 'bar',
+    data: {
+      labels: q1.map(r => r.nom_utilisateur),
+      datasets: [{ label: 'Points', data: q1.map(r => r.nbr_pt),
+        backgroundColor: 'rgba(99,102,241,0.75)', borderRadius: 6 }]
+    },
+    options: chartDefaults
+  });
+
+  // Q2 – table utilisateurs actifs
+  const q2 = await fetchQ(2);
+  document.getElementById('q2-box').innerHTML = tableHtml(
+    q2,
+    ['nom_utilisateur','nb_cours','nb_resumes'],
+    ['Utilisateur','Cours distincts','Résumés']
+  );
+
+  // Q3 – cours le plus actif (card)
+  const q3 = await fetchQ(3);
+  if (q3.length) {
+    const top = q3[0];
+    document.getElementById('q3-box').innerHTML = `
+      <div class="text-center py-3">
+        <div class="stat-icon green mx-auto mb-3" style="width:56px;height:56px;font-size:1.4rem">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="fw-bold fs-5">${top.code_cours}</div>
+        <div class="text-muted small mb-2">${top.nom_cours}</div>
+        <div class="badge bg-success bg-opacity-25 text-success fs-6">${top.total_resumes} résumés</div>
+      </div>`;
+  }
+
+  // Q4 – mieux notés par cours
+  const q4 = await fetchQ(4);
+  document.getElementById('q4-box').innerHTML = tableHtml(
+    q4.slice(0, 15),
+    ['code_cours','titre','note_moyenne'],
+    ['Cours','Titre du résumé','Note moyenne']
+  ) + (q4.length > 15 ? `<div class="px-3 pb-2 text-muted small">… et ${q4.length - 15} autres</div>` : '');
+
+  // Q5 – sans résumé
+  const q5 = await fetchQ(5);
+  document.getElementById('q5-count-box').innerHTML = `
+    <div class="stat-value" style="font-size:2.5rem;color:var(--accent)">${q5.length}</div>
+    <div class="text-muted small mt-1">utilisateur(s) sans résumé</div>`;
+  document.getElementById('q5-box').innerHTML = tableHtml(
+    q5, ['nom_utilisateur','email','date_inscription'], ['Utilisateur','Email','Inscrit le']
+  );
+
+  // Q6 – objet le plus acheté
+  const q6 = await fetchQ(6);
+  if (q6.length) {
+    const obj = q6[0];
+    const icons = { badge: 'shield-halved', titre: 'crown', theme: 'palette' };
+    const icon = icons[obj.type_cosmetique] || 'star';
+    document.getElementById('q6-box').innerHTML = `
+      <div class="text-center py-2">
+        <i class="fa-solid fa-${icon} fa-2x mb-2" style="color:var(--accent)"></i>
+        <div class="fw-bold">${obj.nom}</div>
+        <div class="text-muted small mb-2">${obj.type_cosmetique === 'titre' ? 'titre · récompense de niveau' : obj.type_cosmetique + ' · ' + obj.prix_points + ' pts'}</div>
+        <div class="badge bg-warning bg-opacity-20 text-warning">${obj.nb_achats} achat(s)</div>
+      </div>`;
+  }
+
+  // Q7 – déficit
+  const q7 = await fetchQ(7);
+  if (!q7.length) {
+    document.getElementById('q7-box').innerHTML =
+      '<div class="p-3 text-success small"><i class="fa-solid fa-circle-check me-2"></i>Aucun utilisateur en déficit.</div>';
+  } else {
+    document.getElementById('q7-box').innerHTML = tableHtml(
+      q7, ['nom_utilisateur','solde_actuel','total_gain','total_depense'],
+      ['Utilisateur','Solde actuel','Total gagné','Total dépensé']
+    );
+  }
+
+  // Q8 – moyenne
+  const q8 = await fetchQ(8);
+  const avg = q8[0]?.moyenne ?? 0;
+  document.getElementById('q8-box').innerHTML = `
+    <div class="stat-value" style="font-size:2.5rem;color:var(--accent)">${parseFloat(avg).toFixed(2)}</div>
+    <div class="text-muted small mt-1">résumés en moyenne<br>par utilisateur</div>`;
+})();
+</script>
+{% endblock %}

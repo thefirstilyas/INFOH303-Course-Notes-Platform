@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objetsCosmetiques>
+    <objet id="1">
+        <nom>Débutant</nom>
+        <type>badge</type>
+        <description>Attribué aux nouveaux contributeurs</description>
+        <prix>50</prix>
+    </objet>
+    <objet id="2">
+        <nom>Apprenti</nom>
+        <type>badge</type>
+        <description>Premier niveau de contribution</description>
+        <prix>100</prix>
+    </objet>
+    <objet id="3">
+        <nom>Contributeur actif</nom>
+        <type>badge</type>
+        <description>Publie régulièrement des résumés</description>
+        <prix>200</prix>
+    </objet>
+    <objet id="4">
+        <nom>Contributeur expert</nom>
+        <type>badge</type>
+        <description>Publie des résumés de qualité</description>
+        <prix>500</prix>
+    </objet>
+    <objet id="5">
+        <nom>Expert SQL</nom>
+        <type>badge</type>
+        <description>Maîtrise des bases de données</description>
+        <prix>1000</prix>
+    </objet>
+    <objet id="6">
+        <nom>Top Contributeur</nom>
+        <type>titre</type>
+        <description>Parmi les meilleurs utilisateurs</description>
+        <prix>1500</prix>
+    </objet>
+    <objet id="7">
+        <nom>Maître du savoir</nom>
+        <type>titre</type>
+        <description>Expert académique reconnu</description>
+        <prix>2000</prix>
+    </objet>
+    <objet id="8">
+        <nom>Légende du campus</nom>
+        <type>titre</type>
+        <description>Statut exceptionnel</description>
+        <prix>3000</prix>
+    </objet>
+    <objet id="9">
+        <nom>Profil sombre</nom>
+        <type>theme</type>
+        <description>Thème sombre pour le profil</description>
+        <prix>300</prix>
+    </objet>
+    <objet id="10">
+        <nom>Profil clair</nom>
+        <type>theme</type>
+        <description>Thème clair alternatif</description>
+        <prix>300</prix>
+    </objet>
+    <objet id="11">
+        <nom>Thème nuit</nom>
+        <type>theme</type>
+        <description>Interface nocturne</description>
+        <prix>400</prix>
+    </objet>
+    <objet id="12">
+        <nom>Thème pastel</nom>
+        <type>theme</type>
+        <description>Couleurs douces</description>
+        <prix>400</prix>
+    </objet>
+    <objet id="13">
+        <nom>Icône étoile</nom>
+        <type>cosmetique</type>
+        <description>Icône spéciale</description>
+        <prix>150</prix>
+    </objet>
+    <objet id="14">
+        <nom>Icône flamme</nom>
+        <type>cosmetique</type>
+        <description>Activité élevée</description>
+        <prix>200</prix>
+    </objet>
+    <objet id="15">
+        <nom>Icône trophée</nom>
+        <type>cosmetique</type>
+        <description>Symbole de réussite</description>
+        <prix>250</prix>
+    </objet>
+    <objet id="16">
+        <nom>Icône livre</nom>
+        <type>cosmetique</type>
+        <description>Passion pour l’étude</description>
+        <prix>150</prix>
+    </objet>
+    <objet id="17">
+        <nom>Icône cerveau</nom>
+        <type>cosmetique</type>
+        <description>Intellect élevé</description>
+        <prix>300</prix>
+    </objet>
+    <objet id="18">
+        <nom>Badge bronze</nom>
+        <type>badge</type>
+        <description>Badge bronze</description>
+        <prix>400</prix>
+    </objet>
+    <objet id="19">
+        <nom>Badge argent</nom>
+        <type>badge</type>
+        <description>Badge argent</description>
+        <prix>800</prix>
+    </objet>
+    <objet id="20">
+        <nom>Badge or</nom>
+        <type>badge</type>
+        <description>Badge or</description>
+        <prix>1200</prix>
+    </objet>
+    <objet id="21">
+        <nom>Badge diamant</nom>
+        <type>badge</type>
+        <description>Badge premium</description>
+        <prix>2000</prix>
+    </objet>
+    <objet id="22">
+        <nom>Cadre simple</nom>
+        <type>cosmetique</type>
+        <description>Cadre basique</description>
+        <prix>100</prix>
+    </objet>
+    <objet id="23">
+        <nom>Cadre premium</nom>
+        <type>cosmetique</type>
+        <description>Cadre avancé</description>
+        <prix>600</prix>
+    </objet>
+    <objet id="24">
+        <nom>Cadre doré</nom>
+        <type>cosmetique</type>
+        <description>Cadre luxueux</description>
+        <prix>1200</prix>
+    </objet>
+    <objet id="25">
+        <nom>Effet brillant</nom>
+        <type>cosmetique</type>
+        <description>Effet visuel</description>
+        <prix>700</prix>
+    </objet>
+    <objet id="26">
+        <nom>Effet feu</nom>
+        <type>cosmetique</type>
+        <description>Effet animé</description>
+        <prix>900</prix>
+    </objet>
+    <objet id="27">
+        <nom>Effet glace</nom>
+        <type>cosmetique</type>
+        <description>Effet givré</description>
+        <prix>900</prix>
+    </objet>
+    <objet id="28">
+        <nom>Titre étudiant modèle</nom>
+        <type>titre</type>
+        <description>Utilisateur exemplaire</description>
+        <prix>800</prix>
+    </objet>
+    <objet id="29">
+        <nom>Titre mentor</nom>
+        <type>titre</type>
+        <description>Aide les autres</description>
+        <prix>1200</prix>
+    </objet>
+    <objet id="30">
+        <nom>Titre professeur</nom>
+        <type>titre</type>
+        <description>Très expérimenté</description>
+        <prix>2000</prix>
+    </objet>
+    <objet id="31">
+        <nom>Badge IA</nom>
+        <type>badge</type>
+        <description>Spécialiste IA</description>
+        <prix>1100</prix>
+    </objet>
+    <objet id="32">
+        <nom>Badge math</nom>
+        <type>badge</type>
+        <description>Expert mathématiques</description>
+        <prix>900</prix>
+    </objet>
+    <objet id="33">
+        <nom>Badge physique</nom>
+        <type>badge</type>
+        <description>Expert physique</description>
+        <prix>900</prix>
+    </objet>
+    <objet id="34">
+        <nom>Badge économie</nom>
+        <type>badge</type>
+        <description>Expert économie</description>
+        <prix>900</prix>
+    </objet>
+    <objet id="35">
+        <nom>Icône fusée</nom>
+        <type>cosmetique</type>
+        <description>Progression rapide</description>
+        <prix>300</prix>
+    </objet>
+    <objet id="36">
+        <nom>Icône éclair</nom>
+        <type>cosmetique</type>
+        <description>Réactivité</description>
+        <prix>300</prix>
+    </objet>
+    <objet id="37">
+        <nom>Icône cible</nom>
+        <type>cosmetique</type>
+        <description>Précision</description>
+        <prix>300</prix>
+    </objet>
+    <objet id="38">
+        <nom>Thème sombre premium</nom>
+        <type>theme</type>
+        <description>Thème sombre avancé</description>
+        <prix>800</prix>
+    </objet>
+    <objet id="39">
+        <nom>Thème néon</nom>
+        <type>theme</type>
+        <description>Couleurs flashy</description>
+        <prix>900</prix>
+    </objet>
+    <objet id="40">
+        <nom>Titre VIP</nom>
+        <type>titre</type>
+        <description>Utilisateur premium</description>
+        <prix>2500</prix>
+    </objet>
+    <objet id="41">
+        <nom>Titre élite</nom>
+        <type>titre</type>
+        <description>Top utilisateurs</description>
+        <prix>3000</prix>
+    </objet>
+    <objet id="42">
+        <nom>Badge participation</nom>
+        <type>badge</type>
+        <description>Participation active</description>
+        <prix>150</prix>
+    </objet>
+    <objet id="43">
+        <nom>Badge fidélité</nom>
+        <type>badge</type>
+        <description>Utilisateur régulier</description>
+        <prix>300</prix>
+    </objet>
+    <objet id="44">
+        <nom>Cadre arc-en-ciel</nom>
+        <type>cosmetique</type>
+        <description>Cadre coloré</description>
+        <prix>700</prix>
+    </objet>
+    <objet id="45">
+        <nom>Effet holographique</nom>
+        <type>cosmetique</type>
+        <description>Effet futuriste</description>
+        <prix>1000</prix>
+    </objet>
+</objetsCosmetiques>

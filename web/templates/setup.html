@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}Configuration DB{% endblock %}
+
+{% block content_noauth %}
+<div class="auth-wrapper">
+  <div class="auth-card" style="max-width:520px">
+    <div class="text-center mb-4">
+      <div class="auth-logo"><i class="fa-solid fa-database"></i></div>
+      <h4 class="fw-bold">Configuration PostgreSQL</h4>
+      <p class="text-muted small">Entrez les paramètres de connexion à la base de données</p>
+    </div>
+
+    {% if error %}
+      <div class="alert alert-danger py-2">
+        <i class="fa-solid fa-circle-exclamation me-2"></i>{{ error }}
+      </div>
+    {% endif %}
+
+    <form method="POST">
+      <div class="mb-3">
+        <label class="form-label text-muted small fw-semibold">HÔTE</label>
+        <div class="input-group">
+          <span class="input-group-text bg-transparent border-end-0">
+            <i class="fa-solid fa-server text-muted"></i>
+          </span>
+          <input type="text" name="host" class="form-control border-start-0 ps-0"
+                 value="{{ current.host }}" placeholder="localhost"/>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-3">
+        <div class="col-5">
+          <label class="form-label text-muted small fw-semibold">PORT</label>
+          <input type="text" name="port" class="form-control"
+                 value="{{ current.port }}" placeholder="5432"/>
+        </div>
+        <div class="col-7">
+          <label class="form-label text-muted small fw-semibold">BASE DE DONNÉES</label>
+          <input type="text" name="dbname" class="form-control"
+                 value="{{ current.dbname }}" placeholder="infoh303"/>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label text-muted small fw-semibold">UTILISATEUR</label>
+        <div class="input-group">
+          <span class="input-group-text bg-transparent border-end-0">
+            <i class="fa-solid fa-user text-muted"></i>
+          </span>
+          <input type="text" name="user" class="form-control border-start-0 ps-0"
+                 value="{{ current.user }}" placeholder="postgres"/>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label text-muted small fw-semibold">MOT DE PASSE</label>
+        <div class="input-group">
+          <span class="input-group-text bg-transparent border-end-0">
+            <i class="fa-solid fa-key text-muted"></i>
+          </span>
+          <input type="password" name="password" class="form-control border-start-0 ps-0"
+                 value="{{ current.password }}" placeholder="Laisser vide si aucun"/>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">
+        <i class="fa-solid fa-plug me-2"></i>Tester &amp; Connecter
+      </button>
+    </form>
+
+    <p class="text-center text-muted small mt-3 mb-0">
+      Les paramètres ne sont pas sauvegardés sur disque — ils s'appliquent pour cette session uniquement.
+    </p>
+  </div>
+</div>
+{% endblock content_noauth %}

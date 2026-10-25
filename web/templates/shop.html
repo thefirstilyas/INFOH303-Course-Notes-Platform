@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}Boutique{% endblock %}
+{% block page_title %}Boutique{% endblock %}
+
+{% block content %}
+<div class="fade-in">
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title"><i class="fa-solid fa-store"></i> Boutique cosmétique</h1>
+      <p class="page-subtitle">Badges, titres et thèmes à débloquer avec vos points de contribution</p>
+    </div>
+    <div class="page-actions">
+      <div class="stat-card" style="padding:0.6rem 1.1rem">
+        <div class="stat-icon purple" style="width:38px;height:38px;font-size:1rem">
+          <i class="fa-solid fa-coins"></i>
+        </div>
+        <div>
+          <div class="stat-value" style="font-size:1.2rem">{{ user.nbr_pt }}</div>
+          <div class="stat-label">Vos points</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category tabs -->
+  <ul class="nav nav-tabs mb-4" id="shopTabs">
+    <li class="nav-item">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#badges">
+        <i class="fa-solid fa-shield-halved me-1"></i>Badges
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#titres">
+        <i class="fa-solid fa-crown me-1"></i>Titres
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#themes">
+        <i class="fa-solid fa-palette me-1"></i>Thèmes
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    {% for category, label, icon in [('badge', 'badges', 'shield-halved'), ('titre', 'titres', 'crown'), ('theme', 'themes', 'palette')] %}
+    <div class="tab-pane fade {% if category == 'badge' %}show active{% endif %}"
+         id="{{ label }}">
+      {% set cat_items = items | selectattr('type_cosmetique', 'eq', category) | list %}
+      {% if cat_items %}
+      <div class="row g-3">
+        {% for item in cat_items %}
+        <div class="col-md-4 col-lg-3">
+          <div class="shop-card {% if item.possede %}owned{% endif %} {% if item.est_actif %}active-item{% endif %}">
+            <!-- Type badge -->
+            <div class="mb-2">
+              {% if item.type_cosmetique == 'badge' %}
+                <span class="item-type-badge type-badge">Badge</span>
+              {% elif item.type_cosmetique == 'titre' %}
+                <span class="item-type-badge type-titre">Titre</span>
+              {% else %}
+                <span class="item-type-badge type-theme">Thème</span>
+              {% endif %}
+              {% if item.est_actif %}
+                <span class="badge bg-success bg-opacity-25 text-success ms-1">Actif</span>
+              {% endif %}
+            </div>
+
+            <!-- Icon -->
+            <div class="text-center my-3">
+              {% if item.type_cosmetique == 'badge' and badge_icons.get(item.nom) %}
+                <span style="font-size:2rem">{{ badge_icons.get(item.nom) }}</span>
+              {% else %}
+                <i class="fa-solid fa-{{ icon }} fa-2x" style="color:var(--accent)"></i>
+              {% endif %}
+            </div>
+
+            <!-- Name & desc -->
+            <div class="fw-semibold mb-1">{{ item.nom }}</div>
+            {% if item.description %}
+              <p class="text-muted small mb-2" style="font-size:0.78rem">
+                {{ item.description[:80] }}{% if item.description|length > 80 %}…{% endif %}
+              </p>
+            {% endif %}
+
+            <!-- Price -->
+            {% if item.type_cosmetique != 'titre' %}
+            <div class="text-muted small mb-3">
+              <i class="fa-solid fa-coins text-warning me-1"></i>
+              <strong class="text-warning">{{ item.prix_points }}</strong> points
+            </div>
+            {% else %}
+            <div class="text-muted small mb-3">
+              <i class="fa-solid fa-trophy text-primary me-1"></i>
+              <span class="text-primary">Récompense de niveau</span>
+            </div>
+            {% endif %}
+
+            <!-- Action -->
+            <div class="mt-auto">
+              {% if item.type_cosmetique == 'titre' and item.possede %}
+                <button class="btn btn-sm btn-success w-100" disabled>
+                  <i class="fa-solid fa-check me-1"></i>Possédé
+                </button>
+              {% elif item.est_actif %}
+                <form method="POST" action="{{ url_for('shop_deactivate', iid=item.id_objet) }}">
+                  <button type="submit" class="btn btn-sm btn-success w-100">
+                    <i class="fa-solid fa-check me-1"></i>Activé — Désactiver
+                  </button>
+                </form>
+              {% elif item.possede %}
+                <form method="POST" action="{{ url_for('shop_activate', iid=item.id_objet) }}">
+                  <button type="submit" class="btn btn-sm btn-outline-success w-100">
+                    <i class="fa-solid fa-bolt me-1"></i>Activer
+                  </button>
+                </form>
+              {% elif item.type_cosmetique == 'titre' %}
+                <button class="btn btn-sm btn-outline-warning w-100" disabled>
+                  <i class="fa-solid fa-trophy me-1"></i>Récompense niv. {{ titre_niveaux.get(item.id_objet, '?') }}
+                </button>
+              {% elif user.nbr_pt >= item.prix_points %}
+                <form method="POST" action="{{ url_for('shop_buy', iid=item.id_objet) }}"
+                      onsubmit="return confirm('Acheter {{ item.nom }} pour {{ item.prix_points }} pts ?')">
+                  <button type="submit" class="btn btn-sm btn-primary w-100">
+                    <i class="fa-solid fa-bag-shopping me-1"></i>Acheter
+                  </button>
+                </form>
+              {% else %}
+                <button class="btn btn-sm btn-outline-secondary w-100" disabled>
+                  <i class="fa-solid fa-lock me-1"></i>Points insuffisants
+                </button>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+        <div class="text-center text-muted py-5">
+          <i class="fa-solid fa-box-open fa-3x mb-3 d-block"></i>
+          Aucun {{ label }} disponible
+        </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+</div>
+{% endblock %}

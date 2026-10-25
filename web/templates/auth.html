@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block title %}Connexion{% endblock %}
+
+{% block content_noauth %}
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <div class="text-center mb-4">
+      <div class="auth-logo"><i class="fa-solid fa-book-open-reader"></i></div>
+      <h4 class="fw-bold">RésuméULB</h4>
+      <p class="text-muted small">Plateforme de partage de résumés de cours</p>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-pills mb-4 justify-content-center" id="authTabs">
+      <li class="nav-item">
+        <button class="nav-link {% if tab == 'login' %}active{% endif %}" data-target="loginPane">
+          <i class="fa-solid fa-right-to-bracket me-1"></i>Connexion
+        </button>
+      </li>
+      <li class="nav-item ms-1">
+        <button class="nav-link {% if tab == 'register' %}active{% endif %}" data-target="registerPane">
+          <i class="fa-solid fa-user-plus me-1"></i>Inscription
+        </button>
+      </li>
+    </ul>
+
+    <!-- Login pane -->
+    <div id="loginPane" class="auth-pane {% if tab != 'login' %}d-none{% endif %}">
+      <form method="POST">
+        <input type="hidden" name="action" value="login"/>
+        <div class="mb-3">
+          <label class="form-label text-muted small fw-semibold">NOM D'UTILISATEUR</label>
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-end-0">
+              <i class="fa-solid fa-user text-muted"></i>
+            </span>
+            <input type="text" name="username" class="form-control border-start-0 ps-0"
+                   placeholder="ex: alice123" required autofocus/>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-1">
+          <i class="fa-solid fa-right-to-bracket me-2"></i>Se connecter
+        </button>
+      </form>
+      <p class="text-center text-muted small mt-3 mb-0">
+        Pas encore de compte ?
+        <a href="#" class="text-primary switch-tab" data-target="registerPane">Créer un compte</a>
+      </p>
+    </div>
+
+    <!-- Register pane -->
+    <div id="registerPane" class="auth-pane {% if tab != 'register' %}d-none{% endif %}">
+      <form method="POST">
+        <input type="hidden" name="action" value="register"/>
+        <div class="mb-3">
+          <label class="form-label text-muted small fw-semibold">NOM D'UTILISATEUR</label>
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-end-0">
+              <i class="fa-solid fa-user text-muted"></i>
+            </span>
+            <input type="text" name="reg_username" class="form-control border-start-0 ps-0"
+                   placeholder="Choisissez un pseudo" required/>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label text-muted small fw-semibold">EMAIL</label>
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-end-0">
+              <i class="fa-solid fa-envelope text-muted"></i>
+            </span>
+            <input type="email" name="reg_email" class="form-control border-start-0 ps-0"
+                   placeholder="votre@email.com" required/>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-1">
+          <i class="fa-solid fa-user-plus me-2"></i>Créer mon compte
+        </button>
+      </form>
+      <p class="text-center text-muted small mt-3 mb-0">
+        Déjà inscrit ?
+        <a href="#" class="text-primary switch-tab" data-target="loginPane">Se connecter</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock content_noauth %}
+
+{% block scripts %}
+<script>
+  // Tab switching
+  document.querySelectorAll('[data-target]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const target = btn.dataset.target;
+      document.querySelectorAll('.auth-pane').forEach(p => p.classList.add('d-none'));
+      document.querySelectorAll('#authTabs .nav-link').forEach(l => l.classList.remove('active'));
+      document.getElementById(target).classList.remove('d-none');
+      document.querySelector(`[data-target="${target}"].nav-link`)?.classList.add('active');
+    });
+  });
+</script>
+{% endblock %}

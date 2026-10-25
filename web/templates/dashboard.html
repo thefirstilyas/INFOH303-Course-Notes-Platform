@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{% block title %}Tableau de bord{% endblock %}
+{% block page_title %}Tableau de bord{% endblock %}
+
+{% block content %}
+<div class="fade-in">
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title"><i class="fa-solid fa-gauge-high"></i> Bonjour, {{ user.nom_utilisateur }}</h1>
+      <p class="page-subtitle">Vue d'ensemble de votre profil et activité — membre depuis le {{ user.date_inscription }}</p>
+    </div>
+    <div class="page-actions">
+      <a href="{{ url_for('summaries') }}" class="btn btn-primary"><i class="fa-solid fa-plus me-2"></i>Nouveau résumé</a>
+    </div>
+  </div>
+
+  <!-- Stat cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-6 col-md-3">
+      <div class="stat-card">
+        <div class="stat-icon purple"><i class="fa-solid fa-coins"></i></div>
+        <div>
+          <div class="stat-value">{{ user.nbr_pt }}</div>
+          <div class="stat-label">Points</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="stat-card">
+        <div class="stat-icon green"><i class="fa-solid fa-layer-group"></i></div>
+        <div>
+          <div class="stat-value">{{ user.niveau }}</div>
+          <div class="stat-label">Niveau</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="stat-card">
+        <div class="stat-icon amber"><i class="fa-solid fa-trophy"></i></div>
+        <div>
+          <div class="stat-value">#{{ rang }}</div>
+          <div class="stat-label">Classement</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-3">
+      <div class="stat-card">
+        <div class="stat-icon blue"><i class="fa-solid fa-file-lines"></i></div>
+        <div>
+          <div class="stat-value">{{ nb_resumes }}</div>
+          <div class="stat-label">Résumés publiés</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <!-- Recent transactions -->
+    <div class="col-lg-7">
+      <div class="card h-100">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-clock-rotate-left text-muted"></i>
+          Activité récente
+        </div>
+        <div class="card-body p-0">
+          {% if recent_tx %}
+          <div class="table-responsive">
+            <table class="table mb-0">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th class="text-end">Montant</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for tx in recent_tx %}
+                <tr>
+                  <td>
+                    {% if tx.type_transaction == 'gain' %}
+                      <span class="badge-gain">+ Gain</span>
+                    {% else %}
+                      <span class="badge-depense">– Dépense</span>
+                    {% endif %}
+                  </td>
+                  <td class="text-end fw-semibold
+                    {% if tx.type_transaction == 'gain' %}text-success{% else %}text-danger{% endif %}">
+                    {% if tx.type_transaction == 'gain' %}+{% else %}–{% endif %}{{ tx.montant }} pts
+                  </td>
+                  <td class="text-muted small">{{ tx.date_transaction }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+            <div class="p-4 text-center text-muted">
+              <i class="fa-solid fa-inbox fa-2x mb-2 d-block"></i>
+              Aucune transaction pour l'instant
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick stats + actions -->
+    <div class="col-lg-5">
+      <div class="card mb-3">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-chart-pie text-muted"></i>
+          Statistiques globales
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center py-2 border-bottom" style="border-color:var(--border)!important">
+            <span class="text-muted small">Titres</span>
+            <span class="fw-semibold">
+              {% if titres %}
+                <span class="d-flex flex-wrap gap-1 justify-content-end">
+                {% for t in titres %}
+                  <span class="badge bg-primary bg-opacity-25 text-primary">
+                    <i class="fa-solid fa-crown me-1"></i>{{ t.nom }}
+                  </span>
+                {% endfor %}
+                </span>
+              {% else %}
+                <span class="text-muted small">—</span>
+              {% endif %}
+            </span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center py-2 border-bottom" style="border-color:var(--border)!important">
+            <span class="text-muted small">Badge actif</span>
+            <span class="fw-semibold">
+              {% if active_badge %}
+                <span style="display:inline-flex;align-items:center;gap:4px;background:rgba(245,158,11,0.25);border:1px solid rgba(245,158,11,0.5);color:#f59e0b;font-size:0.8rem;font-weight:600;padding:3px 10px;border-radius:20px">
+                  {{ badge_icons.get(active_badge.nom, '🛡️') }} {{ active_badge.nom }}
+                </span>
+              {% else %}
+                <span class="text-muted small">—</span>
+              {% endif %}
+            </span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center py-2 border-bottom" style="border-color:var(--border)!important">
+            <span class="text-muted small">Évaluations données</span>
+            <span class="fw-semibold">{{ nb_evals }}</span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center py-2 border-bottom" style="border-color:var(--border)!important">
+            <span class="text-muted small">Utilisateurs inscrits</span>
+            <span class="fw-semibold">{{ total_users }}</span>
+          </div>
+          <div class="d-flex justify-content-between align-items-center py-2">
+            <span class="text-muted small">Mon rang</span>
+            <span class="fw-semibold">{{ rang }} / {{ total_users }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header d-flex align-items-center gap-2">
+          <i class="fa-solid fa-bolt text-muted"></i>
+          Actions rapides
+        </div>
+        <div class="card-body d-flex flex-column gap-2">
+          <a href="{{ url_for('summaries') }}" class="btn btn-primary">
+            <i class="fa-solid fa-plus me-2"></i>Publier un résumé
+          </a>
+          <a href="{{ url_for('leaderboard') }}" class="btn btn-outline-secondary">
+            <i class="fa-solid fa-trophy me-2"></i>Voir le classement
+          </a>
+          <a href="{{ url_for('shop') }}" class="btn btn-outline-secondary">
+            <i class="fa-solid fa-store me-2"></i>Visiter la boutique
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,944 @@
+{
+    "evaluations": [
+        {
+            "auteur": "romain_phillips",
+            "destinataire": "alice_dupont",
+            "resume": {
+                "cours": "INFOH303",
+                "titre": "Introduction aux bases de données"
+            },
+            "note": 5,
+            "commentaire": "Très clair !"
+        },
+        {
+            "auteur": "isabelle_lambert",
+            "destinataire": "alice_dupont",
+            "resume": {
+                "cours": "MATH201",
+                "titre": "Résumé probabilités"
+            },
+            "note": 4,
+            "commentaire": "Bon résumé"
+        },
+        {
+            "auteur": "camille_leroy",
+            "destinataire": "benoit_martin",
+            "resume": {
+                "cours": "INFOH310",
+                "titre": "Fondamentaux du machine learning"
+            },
+            "note": 4,
+            "commentaire": "Bien structuré"
+        },
+        {
+            "auteur": "yoann_bell",
+            "destinataire": "benoit_martin",
+            "resume": {
+                "cours": "INFOH311",
+                "titre": "Introduction à l'IA"
+            },
+            "note": 4,
+            "commentaire": "Très utile pour la révision"
+        },
+        {
+            "auteur": "samuel_wilson",
+            "destinataire": "camille_leroy",
+            "resume": {
+                "cours": "MATH100",
+                "titre": "Mathématiques discrètes - résumé complet"
+            },
+            "note": 5,
+            "commentaire": "Exceptionnel, merci !"
+        },
+        {
+            "auteur": "quentin_garcia",
+            "destinataire": "camille_leroy",
+            "resume": {
+                "cours": "MATH200",
+                "titre": "Algèbre linéaire synthèse"
+            },
+            "note": 5,
+            "commentaire": "Le meilleur résumé du cours"
+        },
+        {
+            "auteur": "pierre_blanc",
+            "destinataire": "camille_leroy",
+            "resume": {
+                "cours": "MATH203",
+                "titre": "Optimisation - méthodes principales"
+            },
+            "note": 4,
+            "commentaire": "Très complet"
+        },
+        {
+            "auteur": "julien_simon",
+            "destinataire": "david_nguyen",
+            "resume": {
+                "cours": "INFOH100",
+                "titre": "Bases de la programmation"
+            },
+            "note": 3,
+            "commentaire": "Correct mais peut être amélioré"
+        },
+        {
+            "auteur": "yoann_bell",
+            "destinataire": "david_nguyen",
+            "resume": {
+                "cours": "INFOH100",
+                "titre": "Bases de la programmation"
+            },
+            "note": 4,
+            "commentaire": "Assez utile"
+        },
+        {
+            "auteur": "hugo_petit",
+            "destinataire": "emma_bernard",
+            "resume": {
+                "cours": "ECON100",
+                "titre": "Introduction à l'économie - fiche synthèse"
+            },
+            "note": 5,
+            "commentaire": "Parfait, tout est expliqué"
+        },
+        {
+            "auteur": "ulrike_cooper",
+            "destinataire": "emma_bernard",
+            "resume": {
+                "cours": "ECON101",
+                "titre": "Microéconomie complète"
+            },
+            "note": 5,
+            "commentaire": "Incroyable travail"
+        },
+        {
+            "auteur": "yoann_bell",
+            "destinataire": "emma_bernard",
+            "resume": {
+                "cours": "ECON201",
+                "titre": "Économétrie - méthodes et applications"
+            },
+            "note": 5,
+            "commentaire": "Je recommande vivement"
+        },
+        {
+            "auteur": "jerome_baker",
+            "destinataire": "felix_moreau",
+            "resume": {
+                "cours": "LANG100",
+                "titre": "Anglais académique - notes de cours"
+            },
+            "note": 3,
+            "commentaire": "Peut mieux faire"
+        },
+        {
+            "auteur": "felix_moreau",
+            "destinataire": "giulia_ferrari",
+            "resume": {
+                "cours": "PHYS100",
+                "titre": "Physique générale - synthèse"
+            },
+            "note": 5,
+            "commentaire": "Résumé de grande qualité"
+        },
+        {
+            "auteur": "noemie_perez",
+            "destinataire": "giulia_ferrari",
+            "resume": {
+                "cours": "PHYS101",
+                "titre": "Mécanique classique"
+            },
+            "note": 4,
+            "commentaire": "Bien expliqué"
+        },
+        {
+            "auteur": "claire_hernandez",
+            "destinataire": "hugo_petit",
+            "resume": {
+                "cours": "MGMT100",
+                "titre": "Introduction au management"
+            },
+            "note": 4,
+            "commentaire": "Bonne synthèse"
+        },
+        {
+            "auteur": "camille_leroy",
+            "destinataire": "hugo_petit",
+            "resume": {
+                "cours": "MGMT200",
+                "titre": "Gestion de projet - méthodes agiles"
+            },
+            "note": 3,
+            "commentaire": "Manque quelques détails"
+        },
+        {
+            "auteur": "benoit_martin",
+            "destinataire": "isabelle_lambert",
+            "resume": {
+                "cours": "INFOH302",
+                "titre": "Sécurité informatique - concepts clés"
+            },
+            "note": 5,
+            "commentaire": "Excellent travail"
+        },
+        {
+            "auteur": "felix_moreau",
+            "destinataire": "isabelle_lambert",
+            "resume": {
+                "cours": "INFOH308",
+                "titre": "Cloud computing synthèse"
+            },
+            "note": 5,
+            "commentaire": "Très bien structuré"
+        },
+        {
+            "auteur": "olivia_richard",
+            "destinataire": "isabelle_lambert",
+            "resume": {
+                "cours": "INFOH309",
+                "titre": "Big Data - technologies et usages"
+            },
+            "note": 4,
+            "commentaire": "Recommandé"
+        },
+        {
+            "auteur": "pierre_blanc",
+            "destinataire": "julien_simon",
+            "resume": {
+                "cours": "INFOH101",
+                "titre": "Algorithmique de base"
+            },
+            "note": 3,
+            "commentaire": "Correct"
+        },
+        {
+            "auteur": "hadrien_green",
+            "destinataire": "julien_simon",
+            "resume": {
+                "cours": "INFOH101",
+                "titre": "Algorithmique de base"
+            },
+            "note": 4,
+            "commentaire": "Agréable à lire"
+        },
+        {
+            "auteur": "oscar_roberts",
+            "destinataire": "karine_dubois",
+            "resume": {
+                "cours": "LANG200",
+                "titre": "Anglais avancé - grammaire et style"
+            },
+            "note": 5,
+            "commentaire": "Magnifiquement rédigé"
+        },
+        {
+            "auteur": "benoit_martin",
+            "destinataire": "karine_dubois",
+            "resume": {
+                "cours": "LANG201",
+                "titre": "Rédaction scientifique - guide pratique"
+            },
+            "note": 4,
+            "commentaire": "Très pédagogique"
+        },
+        {
+            "auteur": "laura_campbell",
+            "destinataire": "lucas_henry",
+            "resume": {
+                "cours": "INFOH200",
+                "titre": "POO - concepts fondamentaux"
+            },
+            "note": 4,
+            "commentaire": "Bien fait"
+        },
+        {
+            "auteur": "nicolas_robert",
+            "destinataire": "lucas_henry",
+            "resume": {
+                "cours": "INFOH202",
+                "titre": "Développement web - HTML/CSS/JS"
+            },
+            "note": 3,
+            "commentaire": "Pourrait être plus détaillé"
+        },
+        {
+            "auteur": "wendy_cook",
+            "destinataire": "marie_thomas",
+            "resume": {
+                "cours": "MATH101",
+                "titre": "Analyse 1 - intégrales et dérivées"
+            },
+            "note": 4,
+            "commentaire": "Bon contenu"
+        },
+        {
+            "auteur": "sarah_evans",
+            "destinataire": "marie_thomas",
+            "resume": {
+                "cours": "MATH102",
+                "titre": "Analyse 2 - suites et séries"
+            },
+            "note": 5,
+            "commentaire": "M'a aidée à passer l'exam"
+        },
+        {
+            "auteur": "victor_reed",
+            "destinataire": "olivia_richard",
+            "resume": {
+                "cours": "MGMT201",
+                "titre": "Entrepreneuriat - de l'idée au projet"
+            },
+            "note": 4,
+            "commentaire": "Très inspirant"
+        },
+        {
+            "auteur": "jerome_baker",
+            "destinataire": "olivia_richard",
+            "resume": {
+                "cours": "MGMT202",
+                "titre": "Management stratégique synthèse"
+            },
+            "note": 4,
+            "commentaire": "Résumé clair et concis"
+        },
+        {
+            "auteur": "baptiste_young",
+            "destinataire": "pierre_blanc",
+            "resume": {
+                "cours": "INFOH300",
+                "titre": "Systèmes d'exploitation - processus et mémoire"
+            },
+            "note": 5,
+            "commentaire": "Top, merci beaucoup"
+        },
+        {
+            "auteur": "olivia_richard",
+            "destinataire": "pierre_blanc",
+            "resume": {
+                "cours": "INFOH301",
+                "titre": "Réseaux - protocoles essentiels"
+            },
+            "note": 4,
+            "commentaire": "Bien rédigé"
+        },
+        {
+            "auteur": "damien_king",
+            "destinataire": "quentin_garcia",
+            "resume": {
+                "cours": "PHYS102",
+                "titre": "Électricité et magnétisme - fiches"
+            },
+            "note": 3,
+            "commentaire": "Basique mais utile"
+        },
+        {
+            "auteur": "noemie_perez",
+            "destinataire": "rachel_martinez",
+            "resume": {
+                "cours": "INFOH304",
+                "titre": "Génie logiciel - design patterns"
+            },
+            "note": 5,
+            "commentaire": "Incroyable maîtrise du sujet"
+        },
+        {
+            "auteur": "samuel_wilson",
+            "destinataire": "rachel_martinez",
+            "resume": {
+                "cours": "INFOH306",
+                "titre": "Compilation - analyseurs et grammaires"
+            },
+            "note": 5,
+            "commentaire": "Référence absolue"
+        },
+        {
+            "auteur": "alice_dupont",
+            "destinataire": "rachel_martinez",
+            "resume": {
+                "cours": "INFOH307",
+                "titre": "Programmation concurrente - threads et locks"
+            },
+            "note": 4,
+            "commentaire": "Très technique et complet"
+        },
+        {
+            "auteur": "zoe_murphy",
+            "destinataire": "samuel_wilson",
+            "resume": {
+                "cours": "ECON102",
+                "titre": "Macroéconomie - indicateurs clés"
+            },
+            "note": 3,
+            "commentaire": "Acceptable"
+        },
+        {
+            "auteur": "karine_dubois",
+            "destinataire": "samuel_wilson",
+            "resume": {
+                "cours": "ECON102",
+                "titre": "Macroéconomie - indicateurs clés"
+            },
+            "note": 4,
+            "commentaire": "Bien pour débuter"
+        },
+        {
+            "auteur": "victor_reed",
+            "destinataire": "therese_anderson",
+            "resume": {
+                "cours": "INFOH312",
+                "titre": "Vision par ordinateur - réseaux de neurones"
+            },
+            "note": 5,
+            "commentaire": "Vraiment excellent"
+        },
+        {
+            "auteur": "claire_hernandez",
+            "destinataire": "therese_anderson",
+            "resume": {
+                "cours": "INFOH311",
+                "titre": "Intelligence artificielle avancée"
+            },
+            "note": 4,
+            "commentaire": "Très bien fait"
+        },
+        {
+            "auteur": "william_clark",
+            "destinataire": "ugo_taylor",
+            "resume": {
+                "cours": "LANG101",
+                "titre": "Communication écrite - conseils pratiques"
+            },
+            "note": 3,
+            "commentaire": "Peut être amélioré"
+        },
+        {
+            "auteur": "rachel_martinez",
+            "destinataire": "valerie_jackson",
+            "resume": {
+                "cours": "MATH202",
+                "titre": "Statistiques - estimateurs et tests"
+            },
+            "note": 4,
+            "commentaire": "Bien structuré"
+        },
+        {
+            "auteur": "julien_simon",
+            "destinataire": "valerie_jackson",
+            "resume": {
+                "cours": "MATH204",
+                "titre": "Processus stochastiques - chaînes de Markov"
+            },
+            "note": 4,
+            "commentaire": "Compréhensible et précis"
+        },
+        {
+            "auteur": "nicolas_robert",
+            "destinataire": "william_clark",
+            "resume": {
+                "cours": "INFOH203",
+                "titre": "Bases de données avancées - optimisation"
+            },
+            "note": 5,
+            "commentaire": "Le must sur ce sujet"
+        },
+        {
+            "auteur": "zoe_murphy",
+            "destinataire": "william_clark",
+            "resume": {
+                "cours": "INFOH303",
+                "titre": "SQL avancé - requêtes complexes"
+            },
+            "note": 5,
+            "commentaire": "Parfaitement rédigé"
+        },
+        {
+            "auteur": "valerie_jackson",
+            "destinataire": "xavier_lewis",
+            "resume": {
+                "cours": "ECON200",
+                "titre": "Économie internationale - échanges globaux"
+            },
+            "note": 3,
+            "commentaire": "Correct"
+        },
+        {
+            "auteur": "giulia_ferrari",
+            "destinataire": "xavier_lewis",
+            "resume": {
+                "cours": "ECON200",
+                "titre": "Économie internationale - échanges globaux"
+            },
+            "note": 4,
+            "commentaire": "Bonne introduction"
+        },
+        {
+            "auteur": "felix_moreau",
+            "destinataire": "yasmine_hall",
+            "resume": {
+                "cours": "PHYS201",
+                "titre": "Optique - ondes et lentilles"
+            },
+            "note": 4,
+            "commentaire": "Excellent pour réviser"
+        },
+        {
+            "auteur": "zachary_allen",
+            "destinataire": "yasmine_hall",
+            "resume": {
+                "cours": "PHYS102",
+                "titre": "Électromagnétisme - loi de Gauss"
+            },
+            "note": 5,
+            "commentaire": "Bravo, très pédagogique"
+        },
+        {
+            "auteur": "giulia_ferrari",
+            "destinataire": "zachary_allen",
+            "resume": {
+                "cours": "INFOH102",
+                "titre": "Structures de données - arbres et graphes"
+            },
+            "note": 4,
+            "commentaire": "Bien expliqué"
+        },
+        {
+            "auteur": "william_clark",
+            "destinataire": "zachary_allen",
+            "resume": {
+                "cours": "INFOH201",
+                "titre": "Programmation avancée - récursivité"
+            },
+            "note": 3,
+            "commentaire": "Quelques imprécisions"
+        },
+        {
+            "auteur": "william_clark",
+            "destinataire": "amandine_scott",
+            "resume": {
+                "cours": "LANG102",
+                "titre": "Communication orale - prise de parole en public"
+            },
+            "note": 4,
+            "commentaire": "Très bien présenté"
+        },
+        {
+            "auteur": "oscar_roberts",
+            "destinataire": "amandine_scott",
+            "resume": {
+                "cours": "LANG201",
+                "titre": "Rédaction scientifique - structure d'un article"
+            },
+            "note": 5,
+            "commentaire": "Indispensable pour l'oral"
+        },
+        {
+            "auteur": "quentin_garcia",
+            "destinataire": "claire_hernandez",
+            "resume": {
+                "cours": "ECON101",
+                "titre": "Microéconomie - offre et demande"
+            },
+            "note": 5,
+            "commentaire": "Très clair et complet"
+        },
+        {
+            "auteur": "camille_leroy",
+            "destinataire": "claire_hernandez",
+            "resume": {
+                "cours": "ECON102",
+                "titre": "Macroéconomie - modèle IS-LM"
+            },
+            "note": 4,
+            "commentaire": "Bon résumé"
+        },
+        {
+            "auteur": "xavier_bailey",
+            "destinataire": "damien_king",
+            "resume": {
+                "cours": "INFOH305",
+                "titre": "Architecture des ordinateurs - mémoire cache"
+            },
+            "note": 4,
+            "commentaire": "Bon niveau de détail"
+        },
+        {
+            "auteur": "elena_wright",
+            "destinataire": "damien_king",
+            "resume": {
+                "cours": "INFOH305",
+                "titre": "Architecture des ordinateurs - mémoire cache"
+            },
+            "note": 3,
+            "commentaire": "Satisfaisant"
+        },
+        {
+            "auteur": "jerome_baker",
+            "destinataire": "elena_wright",
+            "resume": {
+                "cours": "INFOH310",
+                "titre": "Machine learning - supervisé et non supervisé"
+            },
+            "note": 5,
+            "commentaire": "Absolument remarquable"
+        },
+        {
+            "auteur": "hugo_petit",
+            "destinataire": "elena_wright",
+            "resume": {
+                "cours": "INFOH312",
+                "titre": "Vision par ordinateur - CNN avancés"
+            },
+            "note": 5,
+            "commentaire": "Meilleur ressource du site"
+        },
+        {
+            "auteur": "yasmine_hall",
+            "destinataire": "elena_wright",
+            "resume": {
+                "cours": "INFOH311",
+                "titre": "IA - planification et recherche heuristique"
+            },
+            "note": 5,
+            "commentaire": "Passionnant et rigoureux"
+        },
+        {
+            "auteur": "felix_moreau",
+            "destinataire": "florian_lopez",
+            "resume": {
+                "cours": "MATH100",
+                "titre": "Maths discrètes - graphes et combinatoire"
+            },
+            "note": 3,
+            "commentaire": "Passable"
+        },
+        {
+            "auteur": "laura_campbell",
+            "destinataire": "gaelle_hill",
+            "resume": {
+                "cours": "MGMT200",
+                "titre": "Gestion de projet - PRINCE2 et PMI"
+            },
+            "note": 4,
+            "commentaire": "Pratique et bien organisé"
+        },
+        {
+            "auteur": "samuel_wilson",
+            "destinataire": "gaelle_hill",
+            "resume": {
+                "cours": "MGMT202",
+                "titre": "Management stratégique - analyse SWOT"
+            },
+            "note": 4,
+            "commentaire": "Merci pour ce résumé"
+        },
+        {
+            "auteur": "romain_phillips",
+            "destinataire": "hadrien_green",
+            "resume": {
+                "cours": "PHYS100",
+                "titre": "Physique générale - mécanique newtonienne"
+            },
+            "note": 4,
+            "commentaire": "Solide et rigoureux"
+        },
+        {
+            "auteur": "pauline_turner",
+            "destinataire": "hadrien_green",
+            "resume": {
+                "cours": "PHYS200",
+                "titre": "Thermodynamique - cycles et entropie"
+            },
+            "note": 4,
+            "commentaire": "Très bien"
+        },
+        {
+            "auteur": "xavier_lewis",
+            "destinataire": "jerome_baker",
+            "resume": {
+                "cours": "INFOH302",
+                "titre": "Sécurité - cryptographie et protocoles"
+            },
+            "note": 5,
+            "commentaire": "Précis et très utile"
+        },
+        {
+            "auteur": "mathieu_mitchell",
+            "destinataire": "jerome_baker",
+            "resume": {
+                "cours": "INFOH301",
+                "titre": "Réseaux - TCP/IP en profondeur"
+            },
+            "note": 4,
+            "commentaire": "Bon travail"
+        },
+        {
+            "auteur": "marie_thomas",
+            "destinataire": "laura_campbell",
+            "resume": {
+                "cours": "LANG100",
+                "titre": "Anglais académique - vocabulaire essentiel"
+            },
+            "note": 3,
+            "commentaire": "Bien pour les débutants"
+        },
+        {
+            "auteur": "wendy_cook",
+            "destinataire": "laura_campbell",
+            "resume": {
+                "cours": "LANG100",
+                "titre": "Anglais académique - vocabulaire essentiel"
+            },
+            "note": 4,
+            "commentaire": "Merci pour le partage"
+        },
+        {
+            "auteur": "emma_bernard",
+            "destinataire": "mathieu_mitchell",
+            "resume": {
+                "cours": "MATH201",
+                "titre": "Probabilités - variables aléatoires continues"
+            },
+            "note": 5,
+            "commentaire": "Brillant"
+        },
+        {
+            "auteur": "camille_leroy",
+            "destinataire": "mathieu_mitchell",
+            "resume": {
+                "cours": "MATH202",
+                "titre": "Statistiques - régression et corrélation"
+            },
+            "note": 5,
+            "commentaire": "Très haute qualité"
+        },
+        {
+            "auteur": "titouan_morgan",
+            "destinataire": "noemie_perez",
+            "resume": {
+                "cours": "MGMT100",
+                "titre": "Management - théories classiques"
+            },
+            "note": 3,
+            "commentaire": "Résumé correct"
+        },
+        {
+            "auteur": "olivia_richard",
+            "destinataire": "oscar_roberts",
+            "resume": {
+                "cours": "INFOH309",
+                "titre": "Big Data - Hadoop et Spark"
+            },
+            "note": 5,
+            "commentaire": "Moderne et très complet"
+        },
+        {
+            "auteur": "samuel_wilson",
+            "destinataire": "oscar_roberts",
+            "resume": {
+                "cours": "INFOH308",
+                "titre": "Cloud computing - AWS et Azure"
+            },
+            "note": 4,
+            "commentaire": "Bien sourcé"
+        },
+        {
+            "auteur": "felix_moreau",
+            "destinataire": "pauline_turner",
+            "resume": {
+                "cours": "ECON101",
+                "titre": "Microéconomie - élasticité"
+            },
+            "note": 3,
+            "commentaire": "Basique mais utile"
+        },
+        {
+            "auteur": "olivia_richard",
+            "destinataire": "romain_phillips",
+            "resume": {
+                "cours": "INFOH200",
+                "titre": "POO - héritage et polymorphisme"
+            },
+            "note": 4,
+            "commentaire": "Clair et structuré"
+        },
+        {
+            "auteur": "giulia_ferrari",
+            "destinataire": "romain_phillips",
+            "resume": {
+                "cours": "INFOH201",
+                "titre": "Programmation avancée - patrons de conception"
+            },
+            "note": 4,
+            "commentaire": "Très utile pour le projet"
+        },
+        {
+            "auteur": "yasmine_hall",
+            "destinataire": "sarah_evans",
+            "resume": {
+                "cours": "INFOH304",
+                "titre": "Génie logiciel - tests et qualité"
+            },
+            "note": 5,
+            "commentaire": "Rien à redire, parfait"
+        },
+        {
+            "auteur": "rachel_martinez",
+            "destinataire": "sarah_evans",
+            "resume": {
+                "cours": "INFOH300",
+                "titre": "Systèmes d'exploitation - ordonnancement"
+            },
+            "note": 5,
+            "commentaire": "Référence pour tout le promo"
+        },
+        {
+            "auteur": "damien_king",
+            "destinataire": "sarah_evans",
+            "resume": {
+                "cours": "INFOH307",
+                "titre": "Programmation concurrente - deadlocks"
+            },
+            "note": 5,
+            "commentaire": "Merci énormément"
+        },
+        {
+            "auteur": "pauline_turner",
+            "destinataire": "titouan_morgan",
+            "resume": {
+                "cours": "MATH101",
+                "titre": "Analyse 1 - limites et continuité"
+            },
+            "note": 4,
+            "commentaire": "Bon début"
+        },
+        {
+            "auteur": "xavier_lewis",
+            "destinataire": "titouan_morgan",
+            "resume": {
+                "cours": "MATH101",
+                "titre": "Analyse 1 - limites et continuité"
+            },
+            "note": 3,
+            "commentaire": "Quelques erreurs mais utile"
+        },
+        {
+            "auteur": "karine_dubois",
+            "destinataire": "ulrike_cooper",
+            "resume": {
+                "cours": "PHYS101",
+                "titre": "Mécanique - dynamique et cinématique"
+            },
+            "note": 4,
+            "commentaire": "Bien rédigé et clair"
+        },
+        {
+            "auteur": "xavier_lewis",
+            "destinataire": "ulrike_cooper",
+            "resume": {
+                "cours": "PHYS201",
+                "titre": "Optique - interférences et diffraction"
+            },
+            "note": 4,
+            "commentaire": "Très bon résumé"
+        },
+        {
+            "auteur": "william_clark",
+            "destinataire": "victor_reed",
+            "resume": {
+                "cours": "MGMT201",
+                "titre": "Entrepreneuriat - business model canvas"
+            },
+            "note": 3,
+            "commentaire": "Peut être développé davantage"
+        },
+        {
+            "auteur": "nicolas_robert",
+            "destinataire": "wendy_cook",
+            "resume": {
+                "cours": "ECON201",
+                "titre": "Économétrie - moindres carrés ordinaires"
+            },
+            "note": 4,
+            "commentaire": "Très complet"
+        },
+        {
+            "auteur": "sarah_evans",
+            "destinataire": "wendy_cook",
+            "resume": {
+                "cours": "ECON200",
+                "titre": "Économie internationale - commerce et tarifs"
+            },
+            "note": 5,
+            "commentaire": "Excellent pour les révisions"
+        },
+        {
+            "auteur": "rachel_martinez",
+            "destinataire": "xavier_bailey",
+            "resume": {
+                "cours": "INFOH102",
+                "titre": "Structures de données - listes chaînées"
+            },
+            "note": 4,
+            "commentaire": "Bien fait pour ce niveau"
+        },
+        {
+            "auteur": "ulrike_cooper",
+            "destinataire": "xavier_bailey",
+            "resume": {
+                "cours": "INFOH100",
+                "titre": "Programmation - fonctions et modules"
+            },
+            "note": 3,
+            "commentaire": "Correct mais incomplet"
+        },
+        {
+            "auteur": "titouan_morgan",
+            "destinataire": "yoann_bell",
+            "resume": {
+                "cours": "INFOH306",
+                "titre": "Compilation - automates et langages formels"
+            },
+            "note": 5,
+            "commentaire": "Très impressionnant"
+        },
+        {
+            "auteur": "romain_phillips",
+            "destinataire": "yoann_bell",
+            "resume": {
+                "cours": "INFOH305",
+                "titre": "Architecture - jeux d'instructions RISC/CISC"
+            },
+            "note": 5,
+            "commentaire": "Super qualité"
+        },
+        {
+            "auteur": "emma_bernard",
+            "destinataire": "yoann_bell",
+            "resume": {
+                "cours": "INFOH300",
+                "titre": "Systèmes d'exploitation - virtualisation"
+            },
+            "note": 4,
+            "commentaire": "Complet et bien structuré"
+        },
+        {
+            "auteur": "noemie_perez",
+            "destinataire": "zoe_murphy",
+            "resume": {
+                "cours": "LANG102",
+                "titre": "Communication orale - argumentation"
+            },
+            "note": 4,
+            "commentaire": "Agréable à lire"
+        },
+        {
+            "auteur": "pauline_turner",
+            "destinataire": "zoe_murphy",
+            "resume": {
+                "cours": "LANG102",
+                "titre": "Communication orale - argumentation"
+            },
+            "note": 3,
+            "commentaire": "Bien pour une première fois"
+        }
+    ]
+}

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+{% block title %}Cours{% endblock %}
+{% block page_title %}Cours{% endblock %}
+
+{% block content %}
+<div class="fade-in">
+  <div class="page-header">
+    <div>
+      <h1 class="page-title"><i class="fa-solid fa-graduation-cap"></i> Catalogue des cours</h1>
+      <p class="page-subtitle">{{ courses|length }} cours disponibles — recherchez ou ajoutez-en de nouveaux</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCourseModal">
+        <i class="fa-solid fa-plus me-2"></i>Ajouter un cours
+      </button>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <form method="GET" class="mb-3">
+    <div class="input-group" style="max-width:400px">
+      <span class="input-group-text bg-transparent">
+        <i class="fa-solid fa-magnifying-glass text-muted"></i>
+      </span>
+      <input type="text" name="q" class="form-control" placeholder="Rechercher par code, nom, faculté..."
+             value="{{ search }}"/>
+      <button class="btn btn-outline-secondary" type="submit">Chercher</button>
+      {% if search %}
+        <a href="{{ url_for('courses') }}" class="btn btn-outline-danger"><i class="fa-solid fa-xmark"></i></a>
+      {% endif %}
+    </div>
+  </form>
+
+  <!-- Table -->
+  <div class="card">
+    <div class="table-responsive">
+      <table class="table mb-0">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Nom du cours</th>
+            <th>Faculté</th>
+            <th>Année</th>
+            <th class="text-center">Résumés</th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for c in courses %}
+          <tr>
+            <td>
+              <span class="badge bg-primary bg-opacity-25 text-primary fw-semibold">{{ c.code_cours }}</span>
+            </td>
+            <td class="fw-semibold">{{ c.nom_cours }}</td>
+            <td class="text-muted small">{{ c.faculte }}</td>
+            <td class="text-muted small">{{ c.annee_academique }}</td>
+            <td class="text-center">
+              <span class="badge bg-secondary">{{ c.nb_resumes }}</span>
+            </td>
+            <td class="text-end">
+              <form method="POST" action="{{ url_for('courses_delete', code=c.code_cours) }}"
+                    onsubmit="return confirm('Supprimer le cours {{ c.code_cours }} ?')">
+                <button type="submit" class="btn btn-sm btn-outline-danger">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="6" class="text-center text-muted py-4">
+              <i class="fa-solid fa-inbox fa-2x mb-2 d-block"></i>
+              Aucun cours trouvé{% if search %} pour "{{ search }}"{% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Add course -->
+<div class="modal fade" id="addCourseModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background:var(--bg-card); border:1px solid var(--border)">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">
+          <i class="fa-solid fa-plus text-primary me-2"></i>Ajouter un cours
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <form method="POST" action="{{ url_for('courses_add') }}">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-semibold">CODE DU COURS *</label>
+            <input type="text" name="code_cours" class="form-control" placeholder="ex: INFOH303"
+                   maxlength="20" required/>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-semibold">NOM DU COURS *</label>
+            <input type="text" name="nom_cours" class="form-control"
+                   placeholder="ex: Bases de données" required/>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-semibold">FACULTÉ *</label>
+            <input type="text" name="faculte" class="form-control"
+                   placeholder="ex: Sciences et Techniques" required/>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-semibold">ANNÉE ACADÉMIQUE</label>
+            <input type="text" name="annee_academique" class="form-control"
+                   value="2025-2026" required/>
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-plus me-2"></i>Ajouter
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

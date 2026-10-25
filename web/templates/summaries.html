@@ -1,0 +1,291 @@
+{% extends "base.html" %}
+{% block title %}Résumés{% endblock %}
+{% block page_title %}Résumés{% endblock %}
+
+{% block content %}
+<div class="fade-in">
+  <div class="page-header">
+    <div>
+      <h1 class="page-title"><i class="fa-solid fa-file-lines"></i> Résumés</h1>
+      <p class="page-subtitle">{{ summaries|length }} résumé(s) — partagez vos notes et évaluez celles des autres</p>
+    </div>
+    <div class="page-actions">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSummaryModal">
+        <i class="fa-solid fa-plus me-2"></i>Publier un résumé
+      </button>
+    </div>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+    <a href="{{ url_for('summaries', filter='all', cours=filter_cours) }}"
+       class="btn btn-sm {% if filter_mode == 'all' %}btn-primary{% else %}btn-outline-secondary{% endif %}">
+      <i class="fa-solid fa-globe me-1"></i>Tous les résumés
+    </a>
+    <a href="{{ url_for('summaries', filter='mine', cours=filter_cours) }}"
+       class="btn btn-sm {% if filter_mode == 'mine' %}btn-primary{% else %}btn-outline-secondary{% endif %}">
+      <i class="fa-solid fa-user me-1"></i>Mes résumés
+    </a>
+    <div class="ms-auto" style="min-width:220px">
+      <form method="GET" action="{{ url_for('summaries') }}" class="d-flex gap-2">
+        <input type="hidden" name="filter" value="{{ filter_mode }}"/>
+        <select name="cours" class="form-select form-select-sm"
+                onchange="this.form.submit()">
+          <option value="">Tous les cours</option>
+          {% for c in cours_list %}
+          <option value="{{ c.code_cours }}"
+                  {% if filter_cours == c.code_cours %}selected{% endif %}>
+            {{ c.code_cours }} – {{ c.nom_cours }}
+          </option>
+          {% endfor %}
+        </select>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cards grid -->
+  {% if summaries %}
+  <div class="row g-3">
+    {% for s in summaries %}
+    <div class="col-md-6 col-xl-4">
+      <div class="summary-card">
+        <!-- Top row -->
+        <div class="d-flex justify-content-between align-items-start mb-2">
+          <span class="badge bg-primary bg-opacity-25 text-primary small">{{ s.code_cours }}</span>
+          {% if s.visibilite == 'public' %}
+            <span class="visibility-badge bg-success bg-opacity-15 text-success">Public</span>
+          {% else %}
+            <span class="visibility-badge bg-warning bg-opacity-15 text-warning">Privé</span>
+          {% endif %}
+        </div>
+
+        <!-- Title -->
+        <h6 class="fw-semibold mb-1" title="{{ s.titre }}">
+          {{ s.titre[:60] }}{% if s.titre|length > 60 %}…{% endif %}
+        </h6>
+        <p class="text-muted small mb-2">{{ s.nom_cours }}</p>
+
+        <!-- Author & date -->
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="avatar" style="width:28px;height:28px;font-size:0.75rem">
+            {{ s.nom_utilisateur[0]|upper }}
+          </div>
+          <span class="text-muted small">{{ s.nom_utilisateur }}</span>
+          {% if s.titre_certif %}
+            <span style="display:inline-flex;align-items:center;gap:3px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;font-size:0.58rem;font-weight:700;padding:2px 6px;border-radius:20px;white-space:nowrap">
+              <i class="fa-solid fa-crown" style="font-size:0.52rem"></i>{{ s.titre_certif }}
+            </span>
+          {% endif %}
+          {% if s.badge_actif %}
+            <span style="font-size:0.9rem" title="{{ s.badge_actif }}">{{ badge_icons.get(s.badge_actif, '🛡️') }}</span>
+          {% endif %}
+          <span class="text-muted small ms-auto">{{ s.date_publication }}</span>
+        </div>
+
+        <!-- Stats -->
+        <div class="d-flex align-items-center gap-3 mb-3">
+          {% if s.note_moyenne %}
+            <div class="small">
+              <span class="stars">
+                {% for i in range(5) %}
+                  {% if i < (s.note_moyenne | int) %}★{% else %}☆{% endif %}
+                {% endfor %}
+              </span>
+              <span class="text-muted ms-1">{{ "%.1f"|format(s.note_moyenne|float) }}</span>
+            </div>
+          {% else %}
+            <span class="text-muted small">Pas encore noté</span>
+          {% endif %}
+          <span class="text-muted small ms-auto">
+            <i class="fa-solid fa-comment me-1"></i>{{ s.nb_evals }} éval.
+          </span>
+        </div>
+
+        <!-- Actions -->
+        <div class="d-flex gap-2">
+          <a href="{{ url_for('summary_detail', rid=s.id_resume) }}"
+             class="btn btn-sm btn-outline-secondary">
+            <i class="fa-solid fa-eye"></i>
+          </a>
+          {% if s.id_utilisateur == uid %}
+            <button class="btn btn-sm btn-outline-primary flex-fill"
+                    data-bs-toggle="modal"
+                    data-bs-target="#editModal{{ s.id_resume }}">
+              <i class="fa-solid fa-pen me-1"></i>Modifier
+            </button>
+            <form method="POST" action="{{ url_for('summaries_delete', rid=s.id_resume) }}"
+                  onsubmit="return confirm('Supprimer ce résumé ?')">
+              <button type="submit" class="btn btn-sm btn-outline-danger">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </form>
+          {% else %}
+            <button class="btn btn-sm btn-outline-primary flex-fill"
+                    data-bs-toggle="modal"
+                    data-bs-target="#evalModal{{ s.id_resume }}">
+              <i class="fa-solid fa-star me-1"></i>Évaluer
+            </button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit modal (own summaries only) -->
+    {% if s.id_utilisateur == uid %}
+    <div class="modal fade" id="editModal{{ s.id_resume }}" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content" style="background:var(--bg-card); border:1px solid var(--border)">
+          <div class="modal-header border-0">
+            <h6 class="modal-title fw-bold">
+              <i class="fa-solid fa-pen text-primary me-2"></i>Modifier le résumé
+            </h6>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <form method="POST" action="{{ url_for('summaries_edit', rid=s.id_resume) }}">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label text-muted small fw-semibold">TITRE *</label>
+                <input type="text" name="titre" class="form-control"
+                       value="{{ s.titre }}" required/>
+              </div>
+              <div class="mb-3">
+                <label class="form-label text-muted small fw-semibold">DESCRIPTION</label>
+                <textarea name="description" class="form-control" rows="3">{{ s.description or '' }}</textarea>
+              </div>
+              <div>
+                <label class="form-label text-muted small fw-semibold">VISIBILITÉ</label>
+                <select name="visibilite" class="form-select">
+                  <option value="public" {% if s.visibilite == 'public' %}selected{% endif %}>
+                    Public – visible par tous
+                  </option>
+                  <option value="privé" {% if s.visibilite == 'privé' %}selected{% endif %}>
+                    Privé – visible uniquement par moi
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
+              <button type="submit" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-floppy-disk me-1"></i>Enregistrer
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Evaluate modal -->
+    {% if s.id_utilisateur != uid %}
+    <div class="modal fade" id="evalModal{{ s.id_resume }}" tabindex="-1">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content" style="background:var(--bg-card); border:1px solid var(--border)">
+          <div class="modal-header border-0">
+            <h6 class="modal-title fw-bold">Évaluer « {{ s.titre[:40] }} »</h6>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <form method="POST" action="{{ url_for('summaries_evaluate', rid=s.id_resume) }}">
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label text-muted small fw-semibold">NOTE (1–5) *</label>
+                <div class="d-flex gap-2">
+                  {% for n in [1,2,3,4,5] %}
+                  <div>
+                    <input type="radio" class="btn-check" name="note" id="n{{ s.id_resume }}_{{ n }}"
+                           value="{{ n }}" required/>
+                    <label class="btn btn-sm btn-outline-warning" for="n{{ s.id_resume }}_{{ n }}">
+                      {{ n }}★
+                    </label>
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>
+              <div>
+                <label class="form-label text-muted small fw-semibold">COMMENTAIRE (optionnel)</label>
+                <textarea name="commentaire" class="form-control" rows="3"
+                          placeholder="Votre avis sur ce résumé..."></textarea>
+              </div>
+            </div>
+            <div class="modal-footer border-0">
+              <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Annuler</button>
+              <button type="submit" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-star me-1"></i>Soumettre (+5 pts)
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  {% else %}
+  <div class="card">
+    <div class="card-body text-center py-5 text-muted">
+      <i class="fa-solid fa-file-circle-plus fa-3x mb-3 d-block" style="color:var(--accent)"></i>
+      <h6>Aucun résumé disponible</h6>
+      <p class="small">Soyez le premier à publier un résumé !</p>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addSummaryModal">
+        <i class="fa-solid fa-plus me-2"></i>Publier maintenant
+      </button>
+    </div>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Modal: Add summary -->
+<div class="modal fade" id="addSummaryModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background:var(--bg-card); border:1px solid var(--border)">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold">
+          <i class="fa-solid fa-file-plus text-primary me-2"></i>Publier un résumé
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <form method="POST" action="{{ url_for('summaries_add') }}">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-semibold">TITRE *</label>
+            <input type="text" name="titre" class="form-control"
+                   placeholder="Titre de votre résumé" required/>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-semibold">COURS *</label>
+            <select name="code_cours" class="form-select" required>
+              <option value="">-- Sélectionner un cours --</option>
+              {% for c in cours_list %}
+              <option value="{{ c.code_cours }}">{{ c.code_cours }} – {{ c.nom_cours }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-semibold">DESCRIPTION</label>
+            <textarea name="description" class="form-control" rows="3"
+                      placeholder="Description ou contenu du résumé..."></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label text-muted small fw-semibold">VISIBILITÉ</label>
+            <select name="visibilite" class="form-select">
+              <option value="public">Public – visible par tous</option>
+              <option value="privé">Privé – visible uniquement par moi</option>
+            </select>
+          </div>
+          <div class="alert alert-info py-2 small mb-0">
+            <i class="fa-solid fa-coins me-2"></i>
+            Publier un résumé vous rapporte <strong>+10 points</strong> !
+          </div>
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane me-2"></i>Publier
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
